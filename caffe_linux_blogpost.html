@@ -51,14 +51,14 @@ article {
   
 <nav>
   <ul>
-    <li><a href="#">Installing Ubuntu</a></li>
-    <li><a href="#">Installing CUDA</a></li>
+    <li><a href="#ubuntu">Installing Ubuntu</a></li>
+    <li><a href="#cudadeb">Installing CUDA</a></li>
     <li><a href="#">Installing CUDNN</a></li>
     <li><a href="#">Installing Caffe</a></li>
   </ul>
 </nav>
 
-<article>
+<article id="ubuntu">
   <h1>Installing Ubuntu</h1>
 <p>
 
@@ -78,7 +78,7 @@ STEP 4: Reboot and hit ESC before login to into GRUB<br>
 </p>
 </article>
 
-<article>
+<article id="comp">
   <h1>Verification of GPU Compatibility</h1>
 <p>
 STEP 1: Verify that your GPU is CUDA compatible<br>
@@ -98,7 +98,7 @@ STEP 5: The kernel headers and development packages for the currently running ke
 
 
 
-<article>
+<article id="cudadeb">
   <h1>Installing CUDA via Debian Package</h1>
 <p>
 STEP 1: To install debian package for CUDA<br>
@@ -129,7 +129,7 @@ STEP 4: Install samples<br>
 
 
 
-<article>
+<article id="cudarun">
   <h1>Installing CUDA via RUN FILE</h1>
 <p>
 STEP 1: Disable Nouveau drivers<br>
@@ -157,7 +157,7 @@ STEP 7: Install samples<br>
 </article>
 
 
-<article>
+<article id="error">
   <h1>Debugging Common Errors</h1>
 <p>
 1. Error while loading shared libraries: libcudart.so.4: cannot open shared object file: No such file or directory<br>
