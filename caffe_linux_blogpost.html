@@ -52,7 +52,7 @@ article {
 <nav>
   <ul>
     <li><a href="#ubuntu">Installing Ubuntu</a></li>
-    <li><a href="#cudadeb">Installing CUDA</a></li>
+    <li><a href="#-cudadeb">Installing CUDA</a></li>
     <li><a href="#">Installing CUDNN</a></li>
     <li><a href="#">Installing Caffe</a></li>
   </ul>
@@ -81,18 +81,28 @@ STEP 4: Reboot and hit ESC before login to into GRUB<br>
 <article id="comp">
   <h1>Verification of GPU Compatibility</h1>
 <p>
-STEP 1: Verify that your GPU is CUDA compatible<br>
-        $ lspci | grep -i nvidia<br><br>
-STEP 2: Verify that your version of linux is CUDA compatible<br>
+STEP 1: Verify that your GPU is CUDA compatible
+        <blockquote>
+        $ lspci | grep -i nvidia
+        </blockquote>
+STEP 2: Verify that your version of linux is CUDA compatible
+        <blockquote>
         $ uname -m && cat /etc/*release<br>
-        (x86_64 should confirm that you are running a 64bit OS)<br><br>
-STEP 3: Verify that you have GCC installed<br>
-        $ gcc --version<br>
+        (x86_64 should confirm that you are running a 64bit OS)
+        </blockquote>
+STEP 3: Verify that you have GCC installed
+        <blockquote>
+        $ gcc --version
+        </blockquote>
         If you don't have GCC installed, you need to download an appropriate version or install it from the development tools<br><br>
-STEP 4: Check the version of the kernel that your system is running<br>
-        $ uname -r<br><br>
-STEP 5: The kernel headers and development packages for the currently running kernel can be installed<br>
-        $ sudo apt-get install linux-headers-$(uname -r)<br><br>
+STEP 4: Check the version of the kernel that your system is running
+        <blockquote>
+        $ uname -r
+        </blockquote>
+STEP 5: The kernel headers and development packages for the currently running kernel can be installed
+        <blockquote>
+        $ sudo apt-get install linux-headers-$(uname -r)
+        </blockquote>
 </p>
 </article>
 
@@ -101,29 +111,42 @@ STEP 5: The kernel headers and development packages for the currently running ke
 <article id="cudadeb">
   <h1>Installing CUDA via Debian Package</h1>
 <p>
-STEP 1: To install debian package for CUDA<br>
+STEP 1: To install debian package for CUDA
+<blockquote>
         $ `sudo dpkg -i cuda-repo-ubuntu1404-8-0-rc_8.0.27-1_amd64-deb`<br>
         $ `sudo apt-get update`<br>
-        $ `sudo apt-get install cuda`<br><br>
+        $ `sudo apt-get install cuda`
+</blockquote>
 STEP 2: Reboot the system to load the NVIDIA drivers<br><br>
-STEP 3: Set up the development environment by modifiying the PATH and LD_LIBRARY_PATH environment variables<br>
+STEP 3: Set up the development environment by modifiying the PATH and LD_LIBRARY_PATH environment variables
+<blockquote>
         $ export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}} <br>
         $ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64\ <br>
-                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}<br>
+                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+</blockquote>
         NOTE: If exporting to .bashrc profile doesn't work, open ~/.bashrc file and add these lines manually<br>
-            To find the .bashrc file:<br>
+            To find the .bashrc file:
+            <blockquote>
                 $ cd /home<br>
-                $ ls -la ~/ | more<br>
-                If you cannot find a .bashrc file, create it using <br>
-                    $ vi ~/.bashrc<br>
+                $ ls -la ~/ | more
+            </blockquote>
+                If you cannot find a .bashrc file, create it using
+                <blockquote>
+                    $ vi ~/.bashrc
+                </blockquote>
             Most of the distributions keep a .bashrc file in /etc/skel/<br>
-                Copy it into your home directory using $ cp /etc/skel/.bashrc ~<br><br>
+                Copy it into your home directory using
+                <blockquote>
+                $ cp /etc/skel/.bashrc ~
+                </blockquote>
 
-STEP 4: Install samples<br>
+STEP 4: Install samples
+<blockquote>
         $ cuda-install-samples-8.0.sh ~<br>
         $ cd ~/NVIDIA_CUDA-8.0_Samples/5_Simulations/nbody<br>
         $ make<br>
-        $ ./nbody<br><br>
+        $ ./nbody
+</blockquote>
 </p>
 </article>
 
@@ -133,26 +156,38 @@ STEP 4: Install samples<br>
   <h1>Installing CUDA via RUN FILE</h1>
 <p>
 STEP 1: Disable Nouveau drivers<br>
-        Create a file blacklist-nouveau.conf at /etc/modprobe.d/blacklist-nouveau.conf with the following contents<br>
+        a) Create a file blacklist-nouveau.conf at /etc/modprobe.d/blacklist-nouveau.conf with the following contents
+        <blockquote>
             blacklist nouveau<br>
-            options nouveau mdoeset=0<br>
-        Regenerate the kernel initramfs<br>
-            $ sudo update-initramfs -u<br><br>
+            options nouveau mdoeset=0
+        </blockquote>
+        b) Regenerate the kernel initramfs
+        <blockquote>
+            $ sudo update-initramfs -u
+        </blockquote>
 STEP 2: Reboot into runlevel 3 by temporarily adding the number "3" and the word "nomodeset" to the end of the system's kernel boot parameters.<br><br>
-STEP 3: Run installer with implied acceptance of EULA<br>
-        $ `sudo sh cuda_8.0.27_linux.run --silent`<br><br>
-STEP 4: Create an xorg.conf file to use the NVIDIA GPU for display<br>
-        $ sudo nvidia-xconfig<br><br>
+STEP 3: Run installer with implied acceptance of EULA
+<blockquote>
+        $ `sudo sh cuda_8.0.27_linux.run --silent`
+</blockquote>
+STEP 4: Create an xorg.conf file to use the NVIDIA GPU for display
+<blockquote>
+        $ sudo nvidia-xconfig
+</blockquote>
 STEP 5: Reboot the system<br><br>
-STEP 6: Set up the development environment by modifiying the PATH and LD_LIBRARY_PATH environment variables<br>
+STEP 6: Set up the development environment by modifiying the PATH and LD_LIBRARY_PATH environment variables
+<blockquote>
         $ export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}} <br>
         $ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64\<br>
-                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}<br><br>
-STEP 7: Install samples<br>
+                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+</blockquote>
+STEP 7: Install samples
+<blockquote>
         $ cuda-install-samples-8.0.sh ~<br>
         $ cd ~/NVIDIA_CUDA-8.0_Samples/5_Simulations/nbody<br>
         $ make<br>
-        $ ./nbody<br><br>
+        $ ./nbody
+<blockquote>
 </p>
 </article>
 
@@ -161,10 +196,11 @@ STEP 7: Install samples<br>
   <h1>Debugging Common Errors</h1>
 <p>
 1. Error while loading shared libraries: libcudart.so.4: cannot open shared object file: No such file or directory<br>
+<blockquote>
         $ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib\ ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}<br>
-        OR<br>
+        or,<br>
         $ sudo ldconfig usr/local/cuda/lib64<br><br>
-
+</blockquote>
 2. CURAND_STATUS_LAUNCH_FAILURE<br>
         If you're running an NVIDIA GTX PASCAL card on CUDA 7.5 -> switch to CUDA 8.0. <br><br>
 </p>
