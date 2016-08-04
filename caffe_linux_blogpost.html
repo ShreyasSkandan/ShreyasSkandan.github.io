@@ -124,7 +124,7 @@ STEP 3: Set up the development environment by modifiying the PATH and LD_LIBRARY
         $ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64\ <br>
                          ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 </blockquote>
-        NOTE: If exporting to .bashrc profile doesn't work, open ~/.bashrc file and add these lines manually<br>
+        <i>NOTE:</i> If exporting to .bashrc profile doesn't work, open ~/.bashrc file and add these lines manually<br>
             To find the .bashrc file:
             <blockquote>
                 $ cd /home<br>
@@ -159,17 +159,29 @@ STEP 1: Disable Nouveau drivers<br>
         a) Create a file blacklist-nouveau.conf at /etc/modprobe.d/blacklist-nouveau.conf with the following contents
         <blockquote>
             blacklist nouveau<br>
-            options nouveau mdoeset=0
+            options nouveau modeset=0
         </blockquote>
         b) Regenerate the kernel initramfs
         <blockquote>
             $ sudo update-initramfs -u
         </blockquote>
 STEP 2: Reboot into runlevel 3 by temporarily adding the number "3" and the word "nomodeset" to the end of the system's kernel boot parameters.<br><br>
+<blockquote>
+    $ cd /etc/default<br>
+    $ sudo gedit grub<br>
+    Set the variable GRUB_CMDLINE_LINUX="3"<br>
+    (Once you're done installing CUDA, change this back to "" and update-grub again)<br>
+    $ sudo update-grub
+</blockquote>
 STEP 3: Run installer with implied acceptance of EULA
 <blockquote>
-        $ `sudo sh cuda_8.0.27_linux.run --silent`
+        $ `sudo sh cuda_8.0.27_linux.run --silent`</br>
+        (I ran it without the silent tag and said NO to installing the driver that comes with CUDA 8.0 and chose to install the driver myself)
 </blockquote>
+
+
+STEP 3A: Install the required NVIDIA driver<br>
+
 STEP 4: Create an xorg.conf file to use the NVIDIA GPU for display
 <blockquote>
         $ sudo nvidia-xconfig
@@ -181,6 +193,22 @@ STEP 6: Set up the development environment by modifiying the PATH and LD_LIBRARY
         $ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64\<br>
                          ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 </blockquote>
+
+<i>NOTE:</i><br>
+Test the GPU cards to see if the drivers are working correctly<br>
+<blockquote>
+		$ cat /proc/driver/nvidia/version
+</blockquote>
+Check the version of the CUDA compiler
+<blockquote>
+		$ nvcc -V
+</blockquote>
+
+STEP 6A: Install GCC using
+<blockquote>
+		$ sudo apt-get --yes install build-essential
+</blockquote>
+
 STEP 7: Install samples
 <blockquote>
         $ cuda-install-samples-8.0.sh ~<br>
