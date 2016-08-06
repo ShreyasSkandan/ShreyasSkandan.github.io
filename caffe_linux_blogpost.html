@@ -220,6 +220,32 @@ STEP 7: Install samples
 </article>
 
 
+<article id="cudnninstall">
+    <h1>Installing CuDNN v5 for CUDA 8.0</h1>
+<p>
+STEP 1: Download the CuDNN files from NVIDIA<br><br>
+
+STEP 2: Extract all files (I extracted them to my Downloads folder)<br><br>
+
+STEP 3: Verify the folder in which your CUDA installation occured using the following commands:
+<blockquote>
+    $ which nvcc <br>
+    or,<br>
+    $ ldconfig -p | grep cuda
+</blockquote>
+
+STEP 4: Open the contents of your extracted files, it should contain a folder 'cuda' with two subfolders 'include' and 'lib64'. Move these contents to their respective cuda folders as follows.
+<blockquote>
+    $ sudo cp -P ~/Downloads/cuda/include/cudnn.h /usr/local/cuda/include<br>
+    $ sudo cp -P ~/Downloads/cuda/lib64/* /usr/local/cuda/lib64<br>
+    $ sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+</blockquote>
+I haven't figured out how to actually verify the successful installation of CuDNN without installing one of the machine learning frameworks (Caffe, TensorFlow etc.) so we'll have to wait till one of them are successfully installed to verify this.
+</p>
+</article>
+
+
+
 <article id="error">
   <h1>Debugging Common Errors</h1>
 <p>
@@ -233,6 +259,8 @@ STEP 7: Install samples
         If you're running an NVIDIA GTX PASCAL card on CUDA 7.5 -> switch to CUDA 8.0. <br><br>
 </p>
 </article>
+
+
 
 
 

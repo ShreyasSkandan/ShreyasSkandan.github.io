@@ -97,6 +97,17 @@ STEP 7: Install samples
 
 
 
+tar -xzvf cudnn-6.5-linux-R1.tgz
+cd cudnn-6.5-linux-R1
+sudo cp lib* /usr/local/cuda/lib64/
+sudo cp cudnn.h /usr/local/cuda/include/
+
+do another
+
+sudo ldconfig
+
+to get the library symlinks set up and then rebuild caffe.
+
 
 
 
