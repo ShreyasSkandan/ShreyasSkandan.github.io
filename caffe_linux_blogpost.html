@@ -50,13 +50,26 @@ article {
 </header>
   
 <nav>
+Installation:
   <ul>
-    <li><a href="#ubuntu">Installing Ubuntu</a></li>
-    <li><a href="#cudadeb">Installing CUDA</a></li>
-    <li><a href="#cudnninstall">Installing CUDNN</a></li>
-    <li><a href="#caffeinstall">Installing Caffe</a></li>
+    <li><a href="#ubuntu">Ubuntu</a></li>
+    <li><a href="#cudadeb">CUDA</a></li>
+    <li><a href="#cudnninstall">CUDNN</a></li>
+    <li><a href="#caffeinstall">Caffe</a></li>
   </ul>
 </nav>
+
+<article>
+<h1>Introduction</h1>
+The following tutorial/instruction set is to break down the arduous task of installing Caffe into a set of clear and simple instructions. If you've tried to install Caffe before, it is no secret that it can be a tricky task. While there are plenty of answers online for individual problems, I've rarely come across a single comprehensive guide to getting Caffe to successfully run on <b>Ubuntu 14.04</b>, utilising all the necessary libraries for a PASCAL GPU (here: <b>Nvidia GTX1070</b>) capability and the various interfaces available.<br><br>
+
+I have compiled these instructions during the many hours I spent trying to install the following pieces of code correctly. This instruction set was based off of one created by my friend <i>Steven Chen</i> to help those such as myself get Caffe up and running quickly. This guide however will deal with some of the minor hiccups along the way, specially considering that the PASCAL GPUs are somewhat new to the market, along with <b>CUDA 8.0</b>. This tutorial should have you training and testing models as soon as possible!<br><br>
+
+For a more detailed list of my setup, here is my build: <a href="http://pcpartpicker.com/list/Rc4YTH">PC PartPicker List</a><br><br>
+
+I hope this guide will be of help to you, and if you have any questions, feel free to reach out via e-mail.
+</article>
+
 
 <article id="ubuntu">
   <h1>Installing Ubuntu</h1>
@@ -272,7 +285,7 @@ $ git clone git//github.com/BVLC/git
 STEP 5: Compile caffe
 <blockquote>
     $ cd /path/to/caffe<br>
-    $ make all -j8 (runs on 8 different CPU threads: Adjust the integer value as desired)<br>
+    $ make all -jx (runs on x different CPU threads: Adjust the value of x as desired)<br>
     $ make test<br>
     $ make runtest<br>
     Refer to the 'Debugging Common Errors' section below if you enounter a missing shared libraries error.
