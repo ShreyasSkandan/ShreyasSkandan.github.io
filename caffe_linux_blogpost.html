@@ -53,8 +53,8 @@ article {
   <ul>
     <li><a href="#ubuntu">Installing Ubuntu</a></li>
     <li><a href="#cudadeb">Installing CUDA</a></li>
-    <li><a href="#">Installing CUDNN</a></li>
-    <li><a href="#">Installing Caffe</a></li>
+    <li><a href="#cudnninstall">Installing CUDNN</a></li>
+    <li><a href="#caffeinstall">Installing Caffe</a></li>
   </ul>
 </nav>
 
@@ -243,6 +243,46 @@ STEP 4: Open the contents of your extracted files, it should contain a folder 'c
 I haven't figured out how to actually verify the successful installation of CuDNN without installing one of the machine learning frameworks (Caffe, TensorFlow etc.) so we'll have to wait till one of them are successfully installed to verify this.
 </p>
 </article>
+
+<article id="caffeinstall">
+<h1>Installing Caffe</h1>
+<p>
+STEP 1: Install recommended dependencies
+<blockquote>
+$ sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler <br>
+$ sudo apt-get install --no-install-recommends libboost-all-dev
+</blockquote>
+STEP 2: Install BLAS
+<blockquote>
+$ sudo apt-get install libatlas-base-dev
+</blockquote>
+
+STEP 3: Install the rest of the dependencies
+<blockquote>
+$ sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
+</blockquote>
+
+STEP 4: Pull the latest git repository for the Caffe build
+<blockquote>
+$ sudo apt-get install git<br>
+$ cd /Home (I chose to place the caffe repository in my Home folder)<br>
+$ git clone git//github.com/BVLC/git
+</blockquote>
+
+STEP 5: Compile caffe
+<blockquote>
+    $ cd /path/to/caffe<br>
+    $ make all -j8 (runs on 8 different CPU threads: Adjust the integer value as desired)<br>
+    $ make test<br>
+    $ make runtest<br>
+    Refer to the 'Debugging Common Errors' section below if you enounter a missing shared libraries error.
+</blockquote>
+</p>
+
+If you followed all the above steps correctly, your runtest should have successfully passed all the tests and you should see a result similar to this.<br>
+<img src="img/cuda_cudnn_working_runtest.png" style="width:50%">
+</article>
+
 
 
 
