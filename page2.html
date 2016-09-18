@@ -1,41 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Deep Learning</title>
+    <title>Deep Learning Reading List</title>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: #224870;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
 </head>
-
 <body>
-<h3> Deep Learning Reading Lists </h3>
 
-Recurrent Neural Networks
+<div class="container">
+
+<header>
+   <h1>Reading List : Deep Learning</h1>
+</header>
+  
+<nav>
+Filters:
+  <ul>
+    <li><a href="#rnns">Recurrent NNs</a></li>
+    <li><a href="#cnns">Convolutional NNs</a></li>
+    <li><a href="#gen">General</a></li>
+  </ul>
+  <ul>
+  <li><a href="index.html"> << Back</a><li>
+  </ul>
+</nav>
+
+
+<article id="rnns">
+  <h1>Recurrent Neural Networks</h1>
+<p>
 <ul style="list-style-type:circle">
-	<li>Intro to LSTMS: http://colah.github.io/posts/2015-08-Understanding-LSTMs/</li>
-	<li>Recurrent Neural Networks: https://www.youtube.com/watch?v=56TYLaQN4N8</li>
-	<li>*RNNs for Tracking: https://arxiv.org/abs/1604.03635</li>
-	<li>*Karpathy Blog on RNNs: http://karpathy.github.io/2015/05/21/rnn-effectiveness/</li>
+	<li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">Intro to LSTMS</a></li>
+	<li><a href="https://www.youtube.com/watch?v=56TYLaQN4N8">Recurrent Neural Networks</a></li>
+	<li><a href="https://arxiv.org/abs/1604.03635">RNNs for Tracking</a></li>
+	<li><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">Karpathy Blog on RNNs</a></li>
 </ul>
+</p>
+</article>
 
-Convolutional Neural Networks
+<article id="cnns">
+  <h1>Convolutional Neural Networks</h1>
+<p>
 <ul style="list-style-type:circle">
-	<li>Intro to Convolutional Networks: http://cs231n.github.io/convolutional-networks/</li>
-	<li>Nando de Freitas Lecture: https://www.youtube.com/watch?v=bEUX_56Lojc</li>
-	<li>AlexNet: http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf</li>
-	<li>*FCN for Semantic Segmentation: http://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf</li>
-	<li>*http://ufldl.stanford.edu/tutorial/supervised/ConvolutionalNeuralNetwork/</li>
-	<li>*http://deeplearning.net/tutorial/lenet.html</li>
-	<li>Multilabel classification on PASCAL: http://nbviewer.jupyter.org/github/BVLC/caffe/blob/master/examples/pascal-multilabel-with-datalayer.ipynb</li>
-	<li>Net Surgery: https://github.com/BVLC/caffe/blob/master/examples/net_surgery.ipynb</li>
+	<li><a href="http://cs231n.github.io/convolutional-networks/">Intro to Convolutional Networks</a></li>
+	<li><a href="https://www.youtube.com/watch?v=bEUX_56Lojc">Nando de Freitas Lecture</a></li>
+	<li><a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">AlexNet</a></li>
+	<li><a href="http://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf">FCN for Semantic Segmentation</a></li>
+	<li><a href="http://ufldl.stanford.edu/tutorial/supervised/ConvolutionalNeuralNetwork/">Stanford - CNNs</a></li>
+	<li><a href="http://deeplearning.net/tutorial/lenet.html">LeNet</a></li>
+	<li><a href="http://nbviewer.jupyter.org/github/BVLC/caffe/blob/master/examples/pascal-multilabel-with-datalayer.ipynb">Multilabel classification on PASCAL</a></li>
+	<li><a href="https://github.com/BVLC/caffe/blob/master/examples/net_surgery.ipynb">Net Surgery</a></li>
 	<li><a href="http://arxiv.org/pdf/1409.4326v2.pdf">Computing the Stereo Matching Cost with a Convolutional Neural Network</a></li>
 </ul>
+</p>
+</article>
 
-General
+
+
+<article id="gen">
+  <h1>General</h1>
+<p>
 <ul style="list-style-type:circle">
 	<li><a href="http://www.deeplearningbook.org/">http://www.deeplearningbook.org/</a></li>
 </ul>
-
-<p>
-<a href="index.html" target="_self">Back</a>
 </p>
+</article>
+
+
+
+<footer>Shreyas Skandan</footer>
+
+</div>
 
 </body>
 </html>
