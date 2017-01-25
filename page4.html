@@ -40,7 +40,9 @@ ul {
 <article id="idx" align="left">
 <h3>Projects</h3>
   <ul>
+  	<li><a href="#deepfruit">Deep Learning for Fruit Segmentation and Counting</a></li>
     <li><a href="#pynn">Neural Network Design</a></li>
+    <li><a href="#semsegbaby">Semantic Segmantation of Infants</a></li>
     <li><a href="#slam">SLAM</a></li>
     <li><a href="#sfm">Tracking</a></li>
     <li><a href="#qlearn">Q-Learning: PACMAN</a></li>
@@ -56,6 +58,18 @@ ul {
 </article>
 
 
+<article id="deepfruit">
+<h3>Deep Learning for Fruit Segmentation</h3>
+    <p align="justify">
+This project was part of a larger undertaking by the Precision Agriculture team at the Kumar Lab (GRASP, University of Pennsylvania)<br><br>
+
+Details regarding the project can be found in our paper title "Counting Apples and Oranges with Deep Learning: A Data Driven Approach" currently accepted into RAL 2017 and ICRA 2017.<br>
+<a href="http://ieeexplore.ieee.org/document/7814145/">http://ieeexplore.ieee.org/document/7814145/</a><br><br>
+
+The video shown below was our next endeavour into training our network on Mango data. Here just 21 2400x1600 mango images were trained for 10,000 iterations. The network was designed in Caffe using Python. <br><br>
+<iframe width="415" height="215" src="https://www.youtube.com/embed/wfsJwUodO2U" frameborder="0" allowfullscreen></iframe><br><br></p>
+</article>
+
 <article id="pynn">
 <h3>Neural Network Classification of Handwritten Digits using Python</h3>
     <p align="justify">
@@ -66,6 +80,19 @@ Each hidden unit represents different stroke detections and patterns learnt from
 I initially built this neural network for an assignment for the CIS519 "Introduction to Machine Learning" course taught by Eric Eaton at the University of Pennsylvania. This program was written in Python, using only the 'Image' library for image representation of the hidden units.<br><br>
 <iframe width="415" height="215" src="https://www.youtube.com/embed/PuHK6tGzYMA" frameborder="0" allowfullscreen></iframe><br><br></p>
 </article>
+
+<article id="semsegbaby">
+<h3>Semantic Segmentation of Infants in Natural Play</h3>
+    <p align="justify">
+I used a pretrained VOC-8S model, trained on adult humans to evaluate it's performance in detecting infants in natural play conditions. The model performed reasonably well by identifying the infant region but lacking granularity in detection around limb extremeties. The next step is to retrain the model with a labelled dataset of infants and use existing weights as the initial set of weights (net surgery)<br><br>
+
+CNN architecture used was the FCN architecture introduced by Shelhamer et al. using Caffe and Python.
+
+This experiment was for the work at the Rehabilitation Robotics Laboratory - SmarToyGym Project<br><br>
+<iframe width="415" height="215" src="https://www.youtube.com/embed/TZ7pf1Jok74" frameborder="0" allowfullscreen></iframe><br><br></p>
+</article>
+
+
 
 <article id="slam">
 <h3>SLAM Robot Mapping and Localization in 2D</h3>
