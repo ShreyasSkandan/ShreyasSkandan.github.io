@@ -74,7 +74,7 @@ The video shown below was our next endeavour into training our network on Mango 
 <h3>Neural Network Classification of Handwritten Digits using Python</h3>
     <p align="justify">
 I built an artificial neural network from scratch to classify hand written digits using Back-propogation. There are 64 hidden units in the hidden layer, which are each represented by a 20x20 pixel grid cell. To generate this video, I lowered my learning rate and trained the neural network over ~550 epochs (for better visualisation over epochs), where each frame in the video represents the hidden layer at a given epoch.<br><br>
-
+<img src="/img/neuralnet.gif" alt="SFM" width="236" height="236"><br/>  
 Each hidden unit represents different stroke detections and patterns learnt from the handwritten digits. This was easily one of the most exciting and rewarding projects I've worked on.<br><br>
 
 I initially built this neural network for an assignment for the CIS519 "Introduction to Machine Learning" course taught by Eric Eaton at the University of Pennsylvania. This program was written in Python, using only the 'Image' library for image representation of the hidden units.<br><br>
@@ -106,7 +106,7 @@ This project was part of the ESE650 : Learning in Robotics course taught by Dr. 
   <p align="justify">
 Part 1: Here are some of the initial steps in the SFM pipeline, which are a result of estimating the Fundamental Matrix between two images in a sequence and performing RANSAC to get rid of erroneous outliers and get a set of at least 8 strong correspondences. The next step involves estimating the Essential Matrix and generating a set of 4 possible camera pose configurations. The video illustrates the RANSAC algorithm working with different threshold values to refine the strength of the correspondences and also a visualisation of Epipolar Lines is shown.<br><br>
 
-<img src="/img/StructureFromMotion.gif" alt="SFM" width="304" height="236"><br/>     
+<img src="/img/StructureFromMotion.gif" alt="SFM" width="404" height="236"><br/>     
 <br/>
 Part 2: This is the second half of the SFM project that I just completed for the CIS580 Machine Perception course taught by Dr. Jainbo Shi. In this video I visualise results from the final bundle adjustment step (the final point cloud) followed by the previous Perspective n Point algorithm's results. Here the different colored points denote the points added from different frames in the image sequence and the camera positions are shown in red. The next visualisation is the previous triangulation step where two frames from the image sequence are used to generate a set of triangulated 3D points. The triangulated points in black indicate non-linear refinement.<br><br>
 <iframe width="415" height="215" src="https://www.youtube.com/embed/qGq7OZsAGTk" frameborder="0" allowfullscreen></iframe><br><br>
@@ -121,7 +121,7 @@ Part 2: This is the second half of the SFM project that I just completed for the
 This was one of my results for the 'Reinforcement Learning' project/homework that was part of the CIS519 'Introduction to Machine Learning' course taught by Eric Eaton at the University of Pennsylvania.<br><br>
 
 This Q-Learning agent uses function approximation and state abstraction to help PACMAN win as many games as possible. Here, the agent is trained only on 50 games and is exposed to 10 test game instances. In the above video, PACMAN manages to win 8 out of 10 times, with a 80% accuracy. The agent learns weights for state features where different states could share the same features. There is a feature function fn(state,action) over different pairs which is a vector of feature vectors. <br><br>
-<img src="/img/qlearningpacman.gif" alt="qLearnPM" width="304" height="236"><br/>
+<img src="/img/qlearningpacman.gif" alt="qLearnPM" width="404" height="236"><br/>
 This project was implemented in Python using many support methods and programs to replicate the pacman and gridworld experience along with a python library to implement Markov Decision Processes and other libraries like util.py which helped build the q-Learning agent.<br><br>
 
 Video has been rendered at 6x the actual speed.<br><br>
