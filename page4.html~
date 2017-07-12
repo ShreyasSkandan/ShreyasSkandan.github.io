@@ -40,7 +40,6 @@ ul {
 <article id="idx" align="left">
 <h3>Projects</h3>
   <ul>
-    <li><a href="#stereorealtime">Dense Stereo Vision for Real Time Depth Estimation</a></li>
     <li><a href="#infanttrack">Stereo 3D Tracking of Infants in Natural Play Conditions</a></li>
     <li><a href="#deepfruit">Deep Learning for Fruit Segmentation and Counting</a></li>
     <li><a href="#pynn">Neural Network Design</a></li>
@@ -57,15 +56,6 @@ ul {
     <li><a href="#3dfruit">Fruit Tree Reconstruction</a></li>
   </ul>
   <a href="index.html"> << Back</a>
-</article>
-
-
-<article id="stereorealtime">
-<h3>Dense Stereo Vision for Real Time Depth Estimation</h3>
-    <p align="justify">
-GPU Accelerated Semi Global Block Matching on a quad-rotor for real-time dense stereo depth estimation using the NVIDIA TX2, CUDA, OpenCV and OpenVX.<br><br>
-
-<iframe width="415" height="215" src="https://www.youtube.com/embed/uZuipP6tP5I" frameborder="0" allowfullscreen></iframe><br><br></p>
 </article>
 
 
