@@ -1,15 +1,15 @@
 ---
-title: "Paper Title Number 1"
+title: "Stereo 3D Tracking of Infants in Natural Play Conditions"
 collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+permalink: /publication/icorr_3dinfanttracking_2017
+excerpt: 'This paper describes the design and implementation of a multiple view stereoscopic 3D vision system and a supporting infant tracker pipeline..'
+date: 2017-07-17
+venue: '2017 International Conference on Rehabilitation Robotics (ICORR)'
+paperurl: 'https://ieeexplore.ieee.org/document/8009353/'
+citation: 'Shivakumar, S.S. (2017). &quot;Stereo 3D Tracking of Infants in Natural Play Conditions.&quot; <i>2017 International Conference on Rehabilitation Robotics</i>. 1(1).'
 ---
-This paper is about the number 1. The number 2 is left for future work.
+This paper describes the design and implementation of a multiple view stereoscopic 3D vision system and a supporting infant tracker pipeline to track limb movement in natural play environments and dentify potential metrics to quantify movement behavior. So far, human pose estimation and tracking with 3D cameras has been focused primarily on adults and cannot be directly extended to infants because of differences in visual features such as shapes, sizes and appearance. With rehabilitation in mind, we propose a portable, compact, markerless, low cost and high resolution 3D vision system and a tracking algorithm that exploits infant appearance attributes and depth information. This approach achieved a mean 3D tracking error of 8.21cm and a standard deviation of 8.75cm. We also identify two potential metrics for movement behavior analysis - approximate entropy and interaction events.
 
-[Download paper here](http://academicpages.github.io/files/paper1.pdf)
+[Download paper here](https://ieeexplore.ieee.org/document/8009353/)
 
-Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).
+Recommended citation: Shivakumar, S.S., Loeb, H., Bogen, D.K., Shofer, F., Bryant, P., Prosser, L. and Johnson, M.J., 2017, July. Stereo 3D tracking of infants in natural play conditions. In Rehabilitation Robotics (ICORR), 2017 International Conference on (pp. 841-846). IEEE.
