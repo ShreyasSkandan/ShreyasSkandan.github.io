@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Machine Perception Reading List</title>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: #224870;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+   <h1>Reading List : Machine Perception</h1>
+</header>
+  
+<nav>
+Filters:
+  <ul>
+    <li><a href="#stereo3d">Stereo 3D</a></li>
+    <li><a href="#depth3d">Kinect 3D</a></li>
+    <li><a href="#tracking">Tracking</a></li>
+    <li><a href="#other">Other</a></li>
+  </ul>
+  <ul>
+  <li><a href="index.html"> << Back</a><li>
+  </ul>
+</nav>
+
+
+<article id="stereo3d">
+  <h1>Stereo Camera 3D Reconstruction</h1>
+<p>
+<ul style="list-style-type:circle">
+    <li><a href="http://www.sci.utah.edu/~gerig/CS6320-S2013/Materials/CS6320-CV-F2012-Rectification.pdf">Image Rectification Slides</a></li>
+    <li><a href="http://docs.opencv.org/3.1.0/d9/db7/tutorial_py_table_of_contents_calib3d.html#gsc.tab=0">OpenCV Library</a></li>
+    <li><a href="http://www.mathworks.com/help/vision/examples/depth-estimation-from-stereo-video.html">Matlab Library</a></li>
+    <li><a href="https://www.youtube.com/watch?v=kxsvG4sSuvA">Stereo Correspondences Lecture</a></li>
+    <li><a href="http://www.vision.caltech.edu/bouguetj/calib_doc/">Camera Calibration Toolbox for Matlab</a></li>
+    <li><a href="http://www.cs.unc.edu/~blloyd/comp290-089/fmatrix/">Fundamental Matrix Toolbox (Matlab)</a></li>
+    <li><a href="http://www.cvlibs.net/publications/Guney2015CVPR.pdf">Displets-Resolving Stereo Ambiguities</a></li>
+    <li><a href="http://www.nvidia.com/content/events/sc11/pdf/ke-zhu.pdf">Stereo Disparity Generation on GPU (CUDA)</a></li>
+    <li><a href="https://www.cs.unc.edu/~gallup/cuda-stereo/">Real-Time Local Stereo Using CUDA</a></li>
+    <li><a href="https://papers.nips.cc/paper/5539-depth-map-prediction-from-a-single-image-using-a-multi-scale-deep-network.pdf">Depth map prediction from a single image</a></li>
+    <li><a href="https://www.inf.ethz.ch/personal/ladickyl/depth_cvpr14.pdf">Pulling Things out of Perspective</a></li>
+</ul>
+</p>
+</article>
+
+<article id="depth3d">
+  <h1>Kinect and 3D Reconstruction</h1>
+<p>
+<ul style="list-style-type:circle">
+    <li><a href="https://people.csail.mit.edu/spillai/data/papers/cvclass-project-paper.pdf">*2D Tracking and ICP</a></li>
+    <li>Recommended: <a href="http://grail.cs.washington.edu/projects/dynamicfusion/papers/DynamicFusion.pdf">Dynamic Fusion</a></li>
+    <li>Recommended: <a href="http://research.microsoft.com/en-us/um/people/pkohli/papers/uist_2011.pdf">Kinect Fusion</a></li>
+</ul>
+</p>
+</article>
+
+
+
+<article id="tracking">
+  <h1>Tracking (2D and 3D)</h1>
+<p>
+<ul style="list-style-type:circle">
+    <li><a href="http://www.milanton.de/#code">Tracker Code</a></li>
+    <li><a href="http://tracking.cs.princeton.edu/">RGBD Tracker Code (Princeton)</a></li>
+    <li><a href="http://arxiv.org/abs/1212.2823">RGBD Tracker</a></li>
+    <li><a href="http://www4.comp.polyu.edu.hk/~cslzhang/CT/CT.htm">Real-time Compressive Tracking</a></li>
+    <li><a href="http://cecas.clemson.edu/~stb/klt/">Kanade-Lucas-Tomasi Feature Tracker</a></li>
+    <li><a href="https://github.com/gnebehay/CT">Compressive Tracking Code</a></li>
+    <li><a href="http://cvlab.hanyang.ac.kr/tracker_benchmark/">Visual Tracker Benchmark</a></li>
+    <li><a href="http://www.stats.ox.ac.uk/~wauthier/tracker/">Motion Tracking In Image Sequences</a></li>
+    <li><a href="http://cs.unc.edu/~ssinha/Research/GPU_KLT/">GPU Based KLT Tracker</a></li>
+    <li><a href="http://www.vision.ee.ethz.ch/boostingTrackers/index.htm">On-line Boosting Trackers - ETHZ</a></li>
+    <li><a href="http://vision.ucsd.edu/~bbabenko/data/miltrack-pami-final.pdf">Online Multiple Instance Learning - Code DUC</a></li>
+    <li><a href="http://www.cs.toronto.edu/~dross/ivt/">Incremental Learning for Robust Visual Tracking</a></li>
+    <li><a href="http://www.dabi.temple.edu/~hbling/publication/09-tracking-iccv.pdf">Robust Visual Tracking using L1 Minimization</a></li>
+    <li><a href="http://web.engr.oregonstate.edu/~sinisa/research/publications/iccv09_video.pdf">Video Object Segmentation By Tracking Regions</a></li>
+    <li><a href="http://www.cise.ufl.edu/~smshahed/tracking.htm">Visual Tracking with Integral Histograms</a></li>
+    <li><a href="http://cv.snu.ac.kr/research/~vtd/">Visual Tracking Decomposition</a></li>
+    <li><a href="http://www1.coe.neu.edu/~cdicle/papers/dicle_iccv13.pdf"> Tracking Multiple Target with Similar Appearance</a> <a href="https://bitbucket.org/cdicle/smot">CODE</a></li>
+</ul>
+</p>
+</article>
+
+
+<article id="tracking">
+  <h1>Detection and Tracking</h1>
+<p>
+<ul style="list-style-type:circle">
+    <li><a href="http://pjreddie.com/media/files/papers/yolo.pdf">You Only Look Once: Unified, Real-Time Object Detection</a></li>
+    <li><a href="http://202.118.75.4/lu/Paper/ICCV2015/iccv15_lijun.pdf">Visual Tracking with FCN</a></li>
+    <li><a href="https://arxiv.org/pdf/1502.06796.pdf">Online Tracking by Learning Discriminatively Saliency Map with Convolutional Neural Network</a></li>
+    <li><a href="http://pub.ist.ac.at/~akolesnikov/files/ECCV2016/main.pdf">Seed, Expand and Constrain: Three Principles for Weakly-Supervised Image Segmentation</a></li>
+    <li><a href="http://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Noh_Learning_Deconvolution_Network_ICCV_2015_paper.pdf">Learning Deconvolution Network for Semantic Segmentation</a></li>
+</ul>
+</p>
+</article>
+
+
+<article id="thesis">
+<h1>Thesis Reference List</h1>
+<p>
+<ul style="list-style-type:circle">
+    <li>TUM Stereo Matching <a href="http://campar.in.tum.de/twiki/pub/Chair/TeachingWs09Cv2/3D_CV2_WS_2009_Stereo.pdf"> Slides</a></li>
+    <li>Bilateral Filtering <a href="https://www-robotics.jpl.nasa.gov/publications/Adnan_Ansar/3dpvt.pdf">Ansar et. al</a></li>
+    <li>Cross-Scale Cost Aggregating <a href="http://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Zhang_Cross-Scale_Cost_Aggregation_2014_CVPR_paper.pdf"> Paper </a> ; <a href="https://github.com/rookiepig/CrossScaleStereo"> Code </a></li>
+    <li>AD-Census <a href="https://github.com/DLuensch/StereoVision-ADCensus"> Code and Paper </a></li>
+    <li>AD-Census vs BM vs SGBM <a href="https://youtu.be/MZsSTpS-XGI"> Video </a></li>
+    <li>AD-Census Hardware <a href="http://onlinepresent.org/proceedings/vol19_2013/49.pdf"> Paper </a></li>
+    <li>Adaptive Normalized Cross Correlation in Stereo <a href="http://cv.snu.ac.kr/publication/jour/2011/YSHeo_PAMI2011.pdf"> Paper </a></li>
+    <li>Markov Random Fields in Vision <a href="https://mitpress.mit.edu/sites/default/files/titles/content/9780262015776_sch_0001.pdf"> Paper </a></li>
+    <li>Semi Global Matching <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.386.5238&rep=rep1&type=pdf"> Original</a> <a href="http://www.dlr.de/rm/Portaldata/3/Resources/papers/modeler/cvpr05hh.pdf">Paper 1</a> <a href="http://elib.dlr.de/73119/1/180Hirschmueller.pdf"> Paper 2</a></li>
+    <li>Bilateral Filtering Resource <a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/MANDUCHI1/Bilateral_Filtering.html"> Guide </a></li>
+    <li>Fast Bilateral Filter w/ GPU <a href="http://vision.deis.unibo.it/~smatt/fast_bilateral_stereo.htm"> Link </a></li>
+    <li>Real Time Stereo CUDA <a href="http://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1178&context=electricalengineeringfacpub"> Paper </a></li>
+    <li>Real Time Hybrid Stereo Vision System for HD Resolution (FPGA) <a href="http://www.bmva.org/bmvc/2014/papers/paper074/index.html"> Paper </a></li>
+    <li>Bilateral Filter Original <a href="https://users.cs.duke.edu/~tomasi/papers/tomasi/tomasiIccv98.pdf"> Paper </a></li>
+    <li>Normalized Cross Correlation <a href="http://research.microsoft.com/en-us/um/people/zhang/papers/rr-2013.pdf"> Paper </a></li>
+    <li>Unsupervised CNN for Single View Depth Estimation <a href="https://arxiv.org/pdf/1603.04992.pdf"> Paper </a></li>
+    <li>Deep Visual Correspondence Embedding <a href="http://research.baidu.com/wp-content/uploads/2015/11/A-Deep-Visual-Correspondence-Embedding-Model-for-Stereo-Matching-Costs.pdf"> Paper </a></li>
+    <li>Stereopsis via Deep Learning <a href="https://www.iro.umontreal.ca/~memisevr/pubs/depthlearn.pdf"> Paper</a></li>
+    <li>Deep Learning for Depth Estimation <a href="https://sites.google.com/site/yorkyuhuang/home/tutorial/deeplearningfordepthestimation"> Paper </a></li>
+    <li>Large Dataset for Disparity Estimation <a href="http://lmb.informatik.uni-freiburg.de/Publications/2016/MIFDB16/MIFDB16.pdf"> Paper </a></li>
+    <li>MatchNet for Deep Patch Matching <a href="http://www.cs.unc.edu/~xufeng/cs/papers/cvpr15-matchnet.pdf"> Paper</a></li>
+    <li>KITTI 2015 <a href="http://www.cvlibs.net/datasets/kitti/eval_scene_flow.php?benchmark=stereo"> Paper </a></li>
+    <li>Deep Stereo Fusion <a href="http://vision.deis.unibo.it/~mpoggi/papers/3dv2016_dsf.pdf"> Paper </a></li>
+    <li>Deep Learning Feature Point Detectors <a href="http://cvlabwww.epfl.ch/~trulls/pdf/iccv-2015-deepdesc.pdf"> Paper </a></li>
+    <li>Dense Stereo Matching with Machine Learning <a href="http://cs229.stanford.edu/proj2013/ThavornpitakGhoshKhwaja-DenseStereoMatchingUsingMachineLearning.pdf"> Paper </a></li>
+    <li>Ensemble Learning Stereo Confidence <a href="http://www.cv-foundation.org/openaccess/content_cvpr_2013/papers/Haeusler_Ensemble_Learning_for_2013_CVPR_paper.pdf"> Paper </a></li>
+    <li>Towards a Simulation Driven Stereo System <a href="http://www.cvlab.cs.tsukuba.ac.jp/~kfukui/english/epapers/ICPR2012-stereo.pdf"> Paper </a></li>
+    <li>A deep visual correspondence embeddings model for stereo matching costs <a href="http://research.baidu.com/wp-content/uploads/2015/11/A-Deep-Visual-Correspondence-Embedding-Model-for-Stereo-Matching-Costs.pdf">Paper</a></li>
+    <li>FlowNet: Learning Optical Flow with Convolutional Networks <a href="https://arxiv.org/pdf/1504.06852v2.pdf">Paper</a> <a href="http://lmb.informatik.uni-freiburg.de/resources/binaries/">Code</a></li>
+    <li>Learning to compare image patches using CNN <a href="https://arxiv.org/pdf/1504.03641v1.pdf"> Paper</a></li>
+</ul>
+</p>
+</article>
+
+
+<article id="other">
+  <h1>Other Resources</h1>
+<p>
+<ul style="list-style-type:circle">
+    <li><a href="http://202.118.75.4/LiMing/CV_software_chinese.html">Dalian University Collection</a></li>
+</ul>
+</p>
+</article>
+
+
+
+<footer>Shreyas Skandan</footer>
+
+</div>
+
+</body>
+</html>
