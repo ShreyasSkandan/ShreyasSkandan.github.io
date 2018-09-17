@@ -80,11 +80,11 @@ analytics:
 # Site Author
 author:
   name             : "Shreyas S. Shivakumar"
-  avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
+  avatar           : "profile.jpeg"
+  bio              : "I work in the G.R.A.S.P Laboratory, at the Vijay Kumar Lab under Prof. Camillo Jose Taylor. My research is in Deep Learning and Machine Perception. I'm currently exploring the applications of deep learning with visual data as well as applying stereoscopy efficiently for robot perception."
   location         : "Philadelphia, PA"
   employer         :
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  googlescholar    : "https://scholar.google.com/citations?user=8lcIYTYAAAAJ&hl=en&oi=ao"
   email            :
   uri              :
   bitbucket        :
