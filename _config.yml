@@ -81,11 +81,11 @@ analytics:
 author:
   name             : "Shreyas S. Shivakumar"
   avatar           : "profile.jpeg"
-  bio              : "I work in the G.R.A.S.P Laboratory, at the Vijay Kumar Lab under Prof. Camillo Jose Taylor. My research is in Deep Learning and Machine Perception. I'm currently exploring the applications of deep learning with visual data as well as applying stereoscopy efficiently for robot perception."
+  bio              : "CIS PhD Student under Prof. Camillo J. Taylor. Research area: Computer Vision and Machine Learning applied to mobile robots."
   location         : "Philadelphia, PA"
   employer         :
   googlescholar    : "https://scholar.google.com/citations?user=8lcIYTYAAAAJ&hl=en&oi=ao"
-  email            :
+  email            : "sshreyas@seas.upenn.edu"
   uri              :
   bitbucket        :
   codepen          :
@@ -98,8 +98,8 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  linkedin         : "https://www.linkedin.com/in/shreyasskandan/"
+  orcid            : "https://orcid.org/0000-0003-2633-0203"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
@@ -171,7 +171,7 @@ kramdown:
 # Collections
 collections:
   teaching:
-    output: true
+    output: false
     permalink: /:collection/:path/
   publications:
     output: true
@@ -180,7 +180,7 @@ collections:
     output: true
     permalink: /:collection/:path/
   talks:
-    output: true
+    output: false
     permalink: /:collection/:path/
 
 
