@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Installing Caffe on Ubuntu</title>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: #224870;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+   <h1>Installing Caffe on Ubuntu 14.04.4 LTS</h1>
+   <h2>Nvidia GTX 1070</h2>
+</header>
+  
+<nav>
+Installation:
+  <ul>
+    <li><a href="#ubuntu">Ubuntu</a></li>
+    <li><a href="#cudadeb">CUDA</a></li>
+    <li><a href="#cudnninstall">CUDNN</a></li>
+    <li><a href="#caffeinstall">Caffe</a></li>
+    <li><a href="#pycaffe">PyCaffe</a></li>
+  </ul>
+  <ul>
+  <li><a href="index.html"> << Back</a><li>
+  </ul>
+</nav>
+
+<article>
+<h1>Introduction</h1>
+The following tutorial/instruction set is to break down the arduous task of installing Caffe into a set of clear and simple instructions. If you've tried to install Caffe before, it is no secret that it can be a tricky task. While there are plenty of answers online for individual problems, I've rarely come across a single comprehensive guide to getting Caffe to successfully run on <b>Ubuntu 14.04</b>, utilising all the necessary libraries for a PASCAL GPU (here: <b>Nvidia GTX1070</b>) capability and the various interfaces available.<br><br>
+
+I have compiled these instructions during the many hours I spent trying to install the following pieces of code correctly. This instruction set was based off of one created by my friend <i>Steven Chen</i> to help those such as myself get Caffe up and running quickly. This guide however will deal with some of the minor hiccups along the way, specially considering that the PASCAL GPUs are somewhat new to the market, along with <b>CUDA 8.0</b>. This tutorial should have you training and testing models as soon as possible!<br><br>
+
+For a more detailed list of my setup, here is my build: <a href="http://pcpartpicker.com/list/Rc4YTH">PC PartPicker List</a><br><br>
+
+What is <a href="http://caffe.berkeleyvision.org/">Caffe</a>?
+<blockquote><i>
+Caffe is a deep learning framework made with expression, speed, and modularity in mind. It is developed by the Berkeley Vision and Learning Center (BVLC) and by community contributors. Yangqing Jia created the project during his PhD at UC Berkeley. Caffe is released under the BSD 2-Clause license.</i></blockquote>
+
+
+I hope this guide will be of help to you, and if you have any questions, feel free to reach out via e-mail.<br><br>
+
+<b>NOTE:</b> I recomend installing CUDA via the Runfile package, as I have tested the method suggested below on multiple computers.
+</article>
+
+
+<article id="ubuntu">
+  <h1>Installing Ubuntu</h1>
+<p>
+
+STEP 1: Create bootable thumb drive or USB<br>
+        Go to BIOS and rearrange boot settings to place liveUSB or liveCD to highest preference<br><br>
+
+STEP 2: Reboot your computer and when you reach the GRUB options, highlight Install Ubuntu and hit 'e'<br>
+        Replace the 'quiet splash' string with 'nomodeset'<br><br>
+
+STEP 3: Reboot and select Install Ubuntu option from GRUB menu<br>
+        Follow installation - Erase Ubuntu 14.04.4 LTS and reinstall<br>
+        Reboot and go to BIOS and rearrange the boot order to push back the liveUSB / liveCD lower in order<br><br>
+
+STEP 4: Reboot and hit ESC before login to into GRUB<br>
+        Highlight Ubuntu and hit 'e' again and replace 'quiet splash' string with 'nomodeset'<br>
+        Reboot and you should be able to login<br><br>
+</p>
+</article>
+
+<article id="comp">
+  <h1>Verification of GPU Compatibility</h1>
+<p>
+STEP 1: Verify that your GPU is CUDA compatible
+        <blockquote>
+        $ lspci | grep -i nvidia
+        </blockquote>
+STEP 2: Verify that your version of linux is CUDA compatible
+        <blockquote>
+        $ uname -m && cat /etc/*release<br>
+        (x86_64 should confirm that you are running a 64bit OS)
+        </blockquote>
+STEP 3: Verify that you have GCC installed
+        <blockquote>
+        $ gcc --version
+        </blockquote>
+        If you don't have GCC installed, you need to download an appropriate version or install it from the development tools<br><br>
+STEP 4: Check the version of the kernel that your system is running
+        <blockquote>
+        $ uname -r
+        </blockquote>
+STEP 5: The kernel headers and development packages for the currently running kernel can be installed
+        <blockquote>
+        $ sudo apt-get install linux-headers-$(uname -r)
+        </blockquote>
+</p>
+</article>
+
+
+
+<article id="cudadeb">
+  <h1>Installing CUDA via Debian Package</h1>
+<p>
+STEP 1: To install debian package for CUDA
+<blockquote>
+        $ `sudo dpkg -i cuda-repo-ubuntu1404-8-0-rc_8.0.27-1_amd64-deb`<br>
+        $ `sudo apt-get update`<br>
+        $ `sudo apt-get install cuda`
+</blockquote>
+STEP 2: Reboot the system to load the NVIDIA drivers<br><br>
+STEP 3: Set up the development environment by modifiying the PATH and LD_LIBRARY_PATH environment variables
+<blockquote>
+        $ export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}} <br>
+        $ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64\ <br>
+                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+</blockquote>
+        <i>NOTE:</i> If exporting to .bashrc profile doesn't work, open ~/.bashrc file and add these lines manually<br>
+            To find the .bashrc file:
+            <blockquote>
+                $ cd /home<br>
+                $ ls -la ~/ | more
+            </blockquote>
+                If you cannot find a .bashrc file, create it using
+                <blockquote>
+                    $ vi ~/.bashrc
+                </blockquote>
+            Most of the distributions keep a .bashrc file in /etc/skel/<br>
+                Copy it into your home directory using
+                <blockquote>
+                $ cp /etc/skel/.bashrc ~
+                </blockquote>
+
+STEP 4: Install samples
+<blockquote>
+        $ cuda-install-samples-8.0.sh ~<br>
+        $ cd ~/NVIDIA_CUDA-8.0_Samples/5_Simulations/nbody<br>
+        $ make<br>
+        $ ./nbody
+</blockquote>
+</p>
+</article>
+
+
+
+<article id="cudarun">
+  <h1>Installing CUDA via RUN FILE</h1>
+<p>
+STEP 1: Disable Nouveau drivers<br>
+        a) Create a file blacklist-nouveau.conf at /etc/modprobe.d/blacklist-nouveau.conf with the following contents
+        <blockquote>
+            blacklist nouveau<br>
+            options nouveau modeset=0
+        </blockquote>
+        b) Regenerate the kernel initramfs
+        <blockquote>
+            $ sudo update-initramfs -u
+        </blockquote>
+STEP 2: Reboot into runlevel 3 by temporarily adding the number "3" and the word "nomodeset" to the end of the system's kernel boot parameters.<br><br>
+<blockquote>
+    $ cd /etc/default<br>
+    $ sudo gedit grub<br>
+    Set the variable GRUB_CMDLINE_LINUX="3"<br>
+    (Once you're done installing CUDA, change this back to "" and update-grub again)<br>
+    $ sudo update-grub
+</blockquote>
+STEP 3: Run installer with implied acceptance of EULA
+<blockquote>
+        $ `sudo sh cuda_8.0.27_linux.run --silent`</br>
+        (I ran it without the silent tag and said NO to installing the driver that comes with CUDA 8.0 and chose to install the driver myself)
+</blockquote>
+
+
+STEP 3A: Install the required NVIDIA driver<br>
+
+STEP 4: Create an xorg.conf file to use the NVIDIA GPU for display
+<blockquote>
+        $ sudo nvidia-xconfig
+</blockquote>
+STEP 5: Reboot the system<br><br>
+STEP 6: Set up the development environment by modifiying the PATH and LD_LIBRARY_PATH environment variables
+<blockquote>
+        $ export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}} <br>
+        $ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64\<br>
+                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+</blockquote>
+
+<i>NOTE:</i><br>
+Test the GPU cards to see if the drivers are working correctly<br>
+<blockquote>
+		$ cat /proc/driver/nvidia/version
+</blockquote>
+Check the version of the CUDA compiler
+<blockquote>
+		$ nvcc -V
+</blockquote>
+
+STEP 6A: Install GCC using
+<blockquote>
+		$ sudo apt-get --yes install build-essential
+</blockquote>
+
+STEP 7: Install samples
+<blockquote>
+        $ cuda-install-samples-8.0.sh ~<br>
+        $ cd ~/NVIDIA_CUDA-8.0_Samples/5_Simulations/nbody<br>
+        $ make<br>
+        $ ./nbody
+<blockquote>
+</p>
+</article>
+
+
+<article id="cudnninstall">
+    <h1>Installing CuDNN v5 for CUDA 8.0</h1>
+<p>
+STEP 1: Download the CuDNN files from NVIDIA<br><br>
+
+STEP 2: Extract all files (I extracted them to my Downloads folder)<br><br>
+
+STEP 3: Verify the folder in which your CUDA installation occured using the following commands:
+<blockquote>
+    $ which nvcc <br>
+    or,<br>
+    $ ldconfig -p | grep cuda
+</blockquote>
+
+STEP 4: Open the contents of your extracted files, it should contain a folder 'cuda' with two subfolders 'include' and 'lib64'. Move these contents to their respective cuda folders as follows.
+<blockquote>
+    $ sudo cp -P ~/Downloads/cuda/include/cudnn.h /usr/local/cuda/include<br>
+    $ sudo cp -P ~/Downloads/cuda/lib64/* /usr/local/cuda/lib64<br>
+    $ sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+</blockquote>
+I haven't figured out how to actually verify the successful installation of CuDNN without installing one of the machine learning frameworks (Caffe, TensorFlow etc.) so we'll have to wait till one of them are successfully installed to verify this.
+</p>
+</article>
+
+<article id="caffeinstall">
+<h1>Installing Caffe</h1>
+<p>
+STEP 1: Install recommended dependencies
+<blockquote>
+$ sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler <br>
+$ sudo apt-get install --no-install-recommends libboost-all-dev
+</blockquote>
+STEP 2: Install BLAS
+<blockquote>
+$ sudo apt-get install libatlas-base-dev
+</blockquote>
+
+STEP 3: Install the rest of the dependencies
+<blockquote>
+$ sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
+</blockquote>
+
+STEP 4: Pull the latest git repository for the Caffe build
+<blockquote>
+$ sudo apt-get install git<br>
+$ cd /Home (I chose to place the caffe repository in my Home folder)<br>
+$ git clone git//github.com/BVLC/git
+</blockquote>
+
+STEP 5: Compile caffe
+<blockquote>
+    $ cd /path/to/caffe<br>
+    $ make all -jx (runs on x different CPU threads: Adjust the value of x as desired)<br>
+    $ make test<br>
+    $ make runtest<br>
+    Refer to the 'Debugging Common Errors' section below if you enounter a missing shared libraries error.
+</blockquote>
+</p>
+
+If you followed all the above steps correctly, your runtest should have successfully passed all the tests and you should see a result similar to this.<br>
+<img src="img/cuda_cudnn_working_runtest.png" style="width:50%">
+</article>
+
+<article id="pycaffe">
+    <h1>Installing Python Interface</h1>
+<p>
+While Linux comes with a system distribution of Python (2.7.x), it is advisable to avoid using this and create virtual environments with independent python distributions such that you can organise your dependencies within confined spaces. I've tried this installation using PIP and followed the suggested steps mentioned on the Caffe website and I have got the python interface to work successfully, but with this installation of Caffe I decided to try Anaconda and it's vast math and science libraries. <br><br>
+
+STEP 1: Download the Anaconda Installer from <a href="https://www.continuum.io/downloads">HERE</a><br><br>
+STEP 2: Install 
+<blockquote>
+    $ cd ~/Downloads<br>
+    $ bash Anaconda2-4.1.1-Linux-x86_64.sh
+</blockquote>
+Note down the location of your Anaconda installation. I installed anaconda to my $(HOME), in the same folder as Caffe.<br>
+<br>
+STEP 3: Create a virtual environment for all your Caffe processes<br>
+<blockquote>
+    $ conda create -name caffe_env numpy=1.10.2<br>
+    You can enter your virtual environment by simply typing in the following activation command<br><br>
+    $ source activate caffe_env<br>
+    You will notice a prefixed (caffe_env) to your prompt. This indicates that you are inside your environment<br>
+    To deactivate the virtual environment, use the following command<br><br>
+    $ source deactivate<br>
+    But we will continue the following steps inside the virtual environment<br><br>
+    $ source activate caffe_env<br>
+    Check if your virtual environment contains all the dependencies for Caffe<br><br>
+    $ conda list
+    If you can see all the dependencies here, you're ready to go<br>
+</blockquote>
+STEP 4: Build Caffe once again
+<blockquote>
+    $ make clean<br>
+    $ make all -j<br>
+    $ make test -j<br>
+    $ make runtest<br>
+    $ make pycaffe<br>
+    If you've gotten here so far without errors, you've successfully installed Caffe with a python interface.
+</blockquote>
+STEP 5: Testing
+<blockquote>
+    Close all your terminal windows and open up a new window.<br>
+    $ python<br>
+    >>> import caffe<br>
+    This should work without any errors!
+</p>
+</article>
+
+
+
+
+<article id="error">
+  <h1>Debugging Common Errors</h1>
+<p>
+1. Error while loading shared libraries: libcudart.so.4: cannot open shared object file: No such file or directory<br>
+<blockquote>
+        $ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib\ ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}<br>
+        or,<br>
+        $ sudo ldconfig usr/local/cuda/lib64<br><br>
+</blockquote>
+2. CURAND_STATUS_LAUNCH_FAILURE<br>
+        If you're running an NVIDIA GTX PASCAL card on CUDA 7.5 -> switch to CUDA 8.0. <br><br>
+</p>
+</article>
+
+
+
+
+
+<footer>Shreyas Skandan</footer>
+
+</div>
+
+</body>
+</html>
+
