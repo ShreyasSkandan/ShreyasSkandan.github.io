@@ -12,3 +12,8 @@ My name is Shreyas Skandan and I'm currently a PhD Student in the CIS Programme 
 ) under Dr. Michelle Johnson. My research focus is Computer Vision and Deep Learning applied to mobile robots, with a special interest in stereo depth estimation.
 
 I previously worked as an Application Developer at the Kumar Robotics Lab, before which I graduated from the M.S.E in Robotics programme at Penn. I worked on my Master's Thesis under Prof. Camillo Jose Taylor, which was "A survey of High Performance Dense Stereo Algorithms for Real Time Depth Estimation" -- a video of the presentation can be found [here](https://www.youtube.com/watch?v=QvHdOKvwGQw&feature=youtu.be&t=1h11m34s).
+
+
+# Blog Posts
+
+### [1. Jetson AGX Xavier Developer Kit - Initial Thoughts](/posts/jetsonxavier-initialthoughts)

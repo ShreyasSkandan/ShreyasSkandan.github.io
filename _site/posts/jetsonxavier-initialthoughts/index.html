@@ -1,0 +1,539 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Jetson Xavier - Initial Thoughts - Shreyas Skandan</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Shreyas Skandan">
+<meta property="og:title" content="Jetson Xavier - Initial Thoughts">
+
+
+  <link rel="canonical" href="http://localhost:4000/posts/jetsonxavier-initialthoughts/">
+  <meta property="og:url" content="http://localhost:4000/posts/jetsonxavier-initialthoughts/">
+
+
+
+  <meta property="og:description" content="Ever since the Jetson Xavier was announced, I’ve been itching to get my hands onone of them to put it through it’s paces. Thanks to James over at GhostRobotics I finally get to play with one ofthese. I’ve spent a fair amount of time with the Jetson TX1 and Jetson TX2 and Iwill be making direct comparisons to the Xavier’s predecessor, the TX2.">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2018-10-03T00:00:00-07:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Shreyas Skandan",
+      "url" : "http://localhost:4000",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Shreyas Skandan Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="http://localhost:4000/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="http://localhost:4000/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="http://localhost:4000/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="http://localhost:4000/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="http://localhost:4000/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="http://localhost:4000/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="http://localhost:4000/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="http://localhost:4000/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="http://localhost:4000/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4000/">Shreyas Skandan</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/publications/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/projects/">Projects</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/cv/">CV</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  <div class="author__avatar">
+    
+    	<img src="http://localhost:4000/images/profile.jpeg" class="author__avatar" alt="Shreyas S. Shivakumar">
+    
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name">Shreyas S. Shivakumar</h3>
+    <p class="author__bio">CIS PhD Student under Prof. Camillo J. Taylor. Research area: Computer Vision and Machine Learning applied to mobile robots.</p>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Philadelphia, PA</li>
+      
+      
+      
+      
+        <li><a href="mailto:sshreyas@seas.upenn.edu"><i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+      
+      
+      
+        <li><a href="https://twitter.com/ShreyasSkandan"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+      
+      
+      
+      
+        <li><a href="https://www.linkedin.com/in/shreyasskandan"><i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a></li>
+      
+      
+      
+      
+      
+      
+        <li><a href="https://github.com/shreyasskandan"><i class="fa fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><a href="https://scholar.google.com/citations?user=8lcIYTYAAAAJ&hl=en&oi=ao"><i class="ai ai-google-scholar-square ai-fw"></i> Google Scholar</a></li>
+      
+      
+        <li><a href="https://orcid.org/0000-0003-2633-0203"><i class="ai ai-orcid-square ai-fw"></i> ORCID</a></li>
+      
+      
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Jetson Xavier - Initial Thoughts">
+    <meta itemprop="description" content="Ever since the Jetson Xavier was announced, I’ve been itching to get my hands onone of them to put it through it’s paces. Thanks to James over at GhostRobotics I finally get to play with one ofthese. I’ve spent a fair amount of time with the Jetson TX1 and Jetson TX2 and Iwill be making direct comparisons to the Xavier’s predecessor, the TX2.">
+    <meta itemprop="datePublished" content="October 03, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Jetson Xavier - Initial Thoughts
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  5 minute read
+	
+</p>
+          
+        
+        
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2018-10-03T00:00:00-07:00">October 03, 2018</time></p>
+        
+        
+             
+        
+    
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Ever since the Jetson Xavier was announced, I’ve been itching to get my hands on
+one of them to put it through it’s paces. Thanks to James over at <a href="https://www.ghostrobotics.io/">Ghost
+Robotics</a> I finally get to play with one of
+these. I’ve spent a fair amount of time with the Jetson TX1 and Jetson TX2 and I
+will be making direct comparisons to the Xavier’s predecessor, the TX2.</p>
+
+<h1 id="hardware-and-design">Hardware and Design</h1>
+
+<p>Out of the box, the Xavier devkit in no way resembles the previous devkits, and
+that’s a good thing because the previous dev kits had limited to no practical
+value for what we use them for (mobile robots -
+<a href="https://osrf.github.io/ovc/assets/images/ovc1-drone.png">Falcon 250</a> +
+<a href="http://open.vision.computer">Open Vision Computer</a>).
+The entire physical footprint of the devkit is slightly larger than the actual module, and it appears that it couldn’t
+get much smaller even in a tightly packed carrier board (good job @nvidia). However, the first
+reaction is to the weight of this unit. It weighs roughly <strong>660gms</strong> out of the box,
+without the power supply. Since this is a loaner unit and since I cannot gut the
+thing yet, I will guesstimate that most of this weight is the extremely heavy
+heat sink and casing. I will update this post once I get my own unit and take
+all of that off! The unit is a bit tall too but it’s mostly 70% heatsink and fan
+enclosure.</p>
+
+<p><strong>Figure 1: TX2 devkit vs Xavier devkit</strong> (food truck cash card for size comparison)
+<img src="/images/IMG_3345.jpg" alt="devkit-comparisons-1" />
+<strong>Figure 2: Height Comparison</strong>
+<img src="/images/IMG_3346.jpg" alt="devkit-comparisons-2" />
+<strong>Figure 3: The incredible bulk</strong>
+<img src="/images/IMG_3344.jpg" alt="xavier-weight" />
+<strong>Figure 4: Dimensions</strong>
+<img src="/images/IMG_3352.jpg" alt="xavier-height" />
+<strong>Figure 5: Dimensions</strong>
+<img src="/images/IMG_3347.jpg" alt="xavier-width" />
+<strong>Figure 6: Under the carrier hood</strong>
+<img src="/images/IMG_3349.jpg" alt="xavier-carrier" />
+<strong>Figure 7: Power suply</strong>
+<img src="/images/IMG_3354.jpg" alt="xavier-ps" /></p>
+
+<p>Adding to the good news, this product seems well build and extremely well protected.
+If weight isn’t a problem, I would strap one of these onto a robot directly
+without the hassle of manufacturing or buying a separate carrier board.</p>
+
+<p>I would have liked if there was at least another USB Type A port. The
+eSATAp+USB3.0 TypeA port is cool but I think most robotics peripherals are still
+on Type A and I would have preferred not to bring the battle of dongles into the
+robotics world, but oh well. The kind folks at NVIDIA do ship the devkits with
+USB-C to Type-A dongles and don’t charge you extra for it (take that @apple).
+Apart from the USB-C, the rest of the I/O is similar to the TX2 dev-kits. There’s an
+additional M2 which will definitely prove usefull. For those that care, the
+power supply adapter is now a bit smaller too. Now, onto the fun stuff..</p>
+
+<h1 id="specifications-and-performance">Specifications and Performance</h1>
+
+<p><strong>CUDA Compatibility Major/Minor version number: 7.2</strong></p>
+
+<p><strong>Multiprocessors: 8</strong> (TX2 has 2)</p>
+
+<p><strong>CUDA Cores/Mp: 64</strong> (TX2 has 128)</p>
+
+<p><strong>Total CUDA Cores: 512</strong> (TX2 has 256)</p>
+
+<p><strong>Global Memory: ~16GB</strong> (TX2 has ~8GB)</p>
+
+<p><strong>GPU Max Frequency: 1500GHz</strong> (TX2 has 1300GHz)</p>
+
+<p><strong>Memory Clock Rate: 1500MHz</strong></p>
+
+<p><strong>Memory Bus Width: 256-bit</strong> (TX2 has 128-bit)</p>
+
+<p><strong>Figure 8: Device Query</strong>
+<img src="/images/device_query.png" alt="device-query" /></p>
+
+<p>The CUDA Cores to Multiprocessor ratio is interesting. I will post a more
+detailed follow up with actual benchmarks on my code soon. I suspect the Xavier
+will be able to better handle multiple CUDA streams and kernel launches because
+of this, and that is exciting.</p>
+
+<p>In the CPU realm, the Xavier brings 8 ARMv8 Processor cores, which seem to perform significantly
+better than the TX2, where the Denver cores didn’t really make significant
+contributions to performance. The CPU max frequency is 2265Hz and I did a little
+stress test to see how hot things could get.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ./jetson_clocks
+</code></pre></div></div>
+
+<p>Here is somewhat of a baseline for CPU and GPU temperatures. The device was
+idling when these were recorded. These are not freshly booted temperatures.
+Those are in the late 30 degres celsius range.</p>
+
+<p><strong>Figure 8: Before CPU stress test:</strong>
+<img src="/images/baseline_perf_thermal.png" alt="thermal-baseline" /></p>
+
+<p>Let’s stress it out:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stress --cpu 8 --io 6 --vm 6 --vm-bytes 2048M --timeout 600s
+</code></pre></div></div>
+
+<p><strong>Figure 9: Stress temperatures:</strong>
+<img src="/images/stress_temp.png" alt="thermal-cpu" /></p>
+
+<p>CPU-bound processes seem to be handled fairly well. I ran the stress test for 10
+minutes each a few times and temperatures stayed in the 50s.</p>
+
+<p>To add some fuel to the fire, I threw in a pretty intensive GPU-bound process to
+the mix (and dialed back the CPU stress io and vm parameters to 2).</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./nbody_opengles -benchmark -fp64 -fullscreen -numbodies=1000000
+</code></pre></div></div>
+
+<p><strong>Figure 10: GPU Stress temperatures:</strong>
+<img src="/images/cpugpumax.png" alt="hot-hot-hot" /></p>
+
+<p>Things got hot. Both CPU and GPU internal temperatures began to cross the 70
+degree mark. Temperatures remained in the 70s and didn’t appear to increase much
+even at 100% CPU and 100% GPU usage.</p>
+
+<p>While the devkit seems to be well cooled, I suspect the Xavier will not take
+well to having it’s heatsink, fan and casing thrown away (as we bravely do with
+the Falcon 250, but that is an experiment I still intend on performing).</p>
+
+<h1 id="final-thoughts">Final Thoughts</h1>
+
+<p>30-10-02: I think this is a great step forward when compared to the TX2 devkits.
+Performance out of the box is impressive. A proper benchmark on existing TX2
+code is next on the to-do list along with a more comprehensive thermal analysis
+experiment without the fan and heat sink.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/tags/#computer-vision" class="page__taxonomy-item" rel="tag">computer vision</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#embedded" class="page__taxonomy-item" rel="tag">embedded</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#gpu" class="page__taxonomy-item" rel="tag">gpu</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#nvidia" class="page__taxonomy-item" rel="tag">nvidia</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#robotics" class="page__taxonomy-item" rel="tag">robotics</a>
+    
+    </span>
+  </p>
+
+
+
+
+      </footer>
+
+      
+
+<section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/posts/jetsonxavier-initialthoughts/" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/posts/jetsonxavier-initialthoughts/" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http://localhost:4000/posts/jetsonxavier-initialthoughts/" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/posts/jetsonxavier-initialthoughts/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+      
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+    </script>
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/shreyasskandan"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Shreyas Skandan. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+

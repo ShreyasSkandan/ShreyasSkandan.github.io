@@ -1,25 +1,123 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://shreyasskandan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shreyasskandan.github.io/" rel="alternate" type="text/html" /><updated>2018-09-17T19:11:28-07:00</updated><id>https://shreyasskandan.github.io/</id><title type="html">Shreyas Skandan</title><subtitle>PhD Student at the University of Pennsylvania</subtitle><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><entry><title type="html">Blog Post number 4</title><link href="https://shreyasskandan.github.io/posts/2012/08/blog-post-4/" rel="alternate" type="text/html" title="Blog Post number 4" /><published>2015-08-14T00:00:00-07:00</published><updated>2015-08-14T00:00:00-07:00</updated><id>https://shreyasskandan.github.io/posts/2012/08/blog-post-4</id><content type="html" xml:base="https://shreyasskandan.github.io/posts/2012/08/blog-post-4/">&lt;p&gt;This is a sample blog post. Lorem ipsum I can’t remember the rest of lorem ipsum and don’t have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-03T11:38:20-07:00</updated><id>http://localhost:4000/</id><title type="html">Shreyas Skandan</title><subtitle>PhD Student at the University of Pennsylvania</subtitle><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><entry><title type="html">Jetson Xavier - Initial Thoughts</title><link href="http://localhost:4000/posts/jetsonxavier-initialthoughts/" rel="alternate" type="text/html" title="Jetson Xavier - Initial Thoughts" /><published>2018-10-03T00:00:00-07:00</published><updated>2018-10-03T00:00:00-07:00</updated><id>http://localhost:4000/posts/jetsonxavier</id><content type="html" xml:base="http://localhost:4000/posts/jetsonxavier-initialthoughts/">&lt;p&gt;Ever since the Jetson Xavier was announced, I’ve been itching to get my hands on
+one of them to put it through it’s paces. Thanks to James over at &lt;a href=&quot;https://www.ghostrobotics.io/&quot;&gt;Ghost
+Robotics&lt;/a&gt; I finally get to play with one of
+these. I’ve spent a fair amount of time with the Jetson TX1 and Jetson TX2 and I
+will be making direct comparisons to the Xavier’s predecessor, the TX2.&lt;/p&gt;
 
-&lt;h1 id=&quot;headings-are-cool&quot;&gt;Headings are cool&lt;/h1&gt;
+&lt;h1 id=&quot;hardware-and-design&quot;&gt;Hardware and Design&lt;/h1&gt;
 
-&lt;h1 id=&quot;you-can-have-many-headings&quot;&gt;You can have many headings&lt;/h1&gt;
+&lt;p&gt;Out of the box, the Xavier devkit in no way resembles the previous devkits, and
+that’s a good thing because the previous dev kits had limited to no practical
+value for what we use them for (mobile robots -
+&lt;a href=&quot;https://osrf.github.io/ovc/assets/images/ovc1-drone.png&quot;&gt;Falcon 250&lt;/a&gt; +
+&lt;a href=&quot;http://open.vision.computer&quot;&gt;Open Vision Computer&lt;/a&gt;).
+The entire physical footprint of the devkit is slightly larger than the actual module, and it appears that it couldn’t
+get much smaller even in a tightly packed carrier board (good job @nvidia). However, the first
+reaction is to the weight of this unit. It weighs roughly &lt;strong&gt;660gms&lt;/strong&gt; out of the box,
+without the power supply. Since this is a loaner unit and since I cannot gut the
+thing yet, I will guesstimate that most of this weight is the extremely heavy
+heat sink and casing. I will update this post once I get my own unit and take
+all of that off! The unit is a bit tall too but it’s mostly 70% heatsink and fan
+enclosure.&lt;/p&gt;
 
-&lt;h2 id=&quot;arent-headings-cool&quot;&gt;Aren’t headings cool?&lt;/h2&gt;</content><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><category term="cool posts" /><category term="category1" /><category term="category2" /><summary type="html">This is a sample blog post. Lorem ipsum I can’t remember the rest of lorem ipsum and don’t have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.</summary></entry><entry><title type="html">Blog Post number 3</title><link href="https://shreyasskandan.github.io/posts/2014/08/blog-post-3/" rel="alternate" type="text/html" title="Blog Post number 3" /><published>2014-08-14T00:00:00-07:00</published><updated>2014-08-14T00:00:00-07:00</updated><id>https://shreyasskandan.github.io/posts/2014/08/blog-post-3</id><content type="html" xml:base="https://shreyasskandan.github.io/posts/2014/08/blog-post-3/">&lt;p&gt;This is a sample blog post. Lorem ipsum I can’t remember the rest of lorem ipsum and don’t have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Figure 1: TX2 devkit vs Xavier devkit&lt;/strong&gt; (food truck cash card for size comparison)
+&lt;img src=&quot;/images/IMG_3345.jpg&quot; alt=&quot;devkit-comparisons-1&quot; /&gt;
+&lt;strong&gt;Figure 2: Height Comparison&lt;/strong&gt;
+&lt;img src=&quot;/images/IMG_3346.jpg&quot; alt=&quot;devkit-comparisons-2&quot; /&gt;
+&lt;strong&gt;Figure 3: The incredible bulk&lt;/strong&gt;
+&lt;img src=&quot;/images/IMG_3344.jpg&quot; alt=&quot;xavier-weight&quot; /&gt;
+&lt;strong&gt;Figure 4: Dimensions&lt;/strong&gt;
+&lt;img src=&quot;/images/IMG_3352.jpg&quot; alt=&quot;xavier-height&quot; /&gt;
+&lt;strong&gt;Figure 5: Dimensions&lt;/strong&gt;
+&lt;img src=&quot;/images/IMG_3347.jpg&quot; alt=&quot;xavier-width&quot; /&gt;
+&lt;strong&gt;Figure 6: Under the carrier hood&lt;/strong&gt;
+&lt;img src=&quot;/images/IMG_3349.jpg&quot; alt=&quot;xavier-carrier&quot; /&gt;
+&lt;strong&gt;Figure 7: Power suply&lt;/strong&gt;
+&lt;img src=&quot;/images/IMG_3354.jpg&quot; alt=&quot;xavier-ps&quot; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;headings-are-cool&quot;&gt;Headings are cool&lt;/h1&gt;
+&lt;p&gt;Adding to the good news, this product seems well build and extremely well protected.
+If weight isn’t a problem, I would strap one of these onto a robot directly
+without the hassle of manufacturing or buying a separate carrier board.&lt;/p&gt;
 
-&lt;h1 id=&quot;you-can-have-many-headings&quot;&gt;You can have many headings&lt;/h1&gt;
+&lt;p&gt;I would have liked if there was at least another USB Type A port. The
+eSATAp+USB3.0 TypeA port is cool but I think most robotics peripherals are still
+on Type A and I would have preferred not to bring the battle of dongles into the
+robotics world, but oh well. The kind folks at NVIDIA do ship the devkits with
+USB-C to Type-A dongles and don’t charge you extra for it (take that @apple).
+Apart from the USB-C, the rest of the I/O is similar to the TX2 dev-kits. There’s an
+additional M2 which will definitely prove usefull. For those that care, the
+power supply adapter is now a bit smaller too. Now, onto the fun stuff..&lt;/p&gt;
 
-&lt;h2 id=&quot;arent-headings-cool&quot;&gt;Aren’t headings cool?&lt;/h2&gt;</content><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><category term="cool posts" /><category term="category1" /><category term="category2" /><summary type="html">This is a sample blog post. Lorem ipsum I can’t remember the rest of lorem ipsum and don’t have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.</summary></entry><entry><title type="html">Blog Post number 2</title><link href="https://shreyasskandan.github.io/posts/2013/08/blog-post-2/" rel="alternate" type="text/html" title="Blog Post number 2" /><published>2013-08-14T00:00:00-07:00</published><updated>2013-08-14T00:00:00-07:00</updated><id>https://shreyasskandan.github.io/posts/2013/08/blog-post-2</id><content type="html" xml:base="https://shreyasskandan.github.io/posts/2013/08/blog-post-2/">&lt;p&gt;This is a sample blog post. Lorem ipsum I can’t remember the rest of lorem ipsum and don’t have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.&lt;/p&gt;
+&lt;h1 id=&quot;specifications-and-performance&quot;&gt;Specifications and Performance&lt;/h1&gt;
 
-&lt;h1 id=&quot;headings-are-cool&quot;&gt;Headings are cool&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;CUDA Compatibility Major/Minor version number: 7.2&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;you-can-have-many-headings&quot;&gt;You can have many headings&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Multiprocessors: 8&lt;/strong&gt; (TX2 has 2)&lt;/p&gt;
 
-&lt;h2 id=&quot;arent-headings-cool&quot;&gt;Aren’t headings cool?&lt;/h2&gt;</content><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><category term="cool posts" /><category term="category1" /><category term="category2" /><summary type="html">This is a sample blog post. Lorem ipsum I can’t remember the rest of lorem ipsum and don’t have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.</summary></entry><entry><title type="html">Blog Post number 1</title><link href="https://shreyasskandan.github.io/posts/2012/08/blog-post-1/" rel="alternate" type="text/html" title="Blog Post number 1" /><published>2012-08-14T00:00:00-07:00</published><updated>2012-08-14T00:00:00-07:00</updated><id>https://shreyasskandan.github.io/posts/2012/08/blog-post-1</id><content type="html" xml:base="https://shreyasskandan.github.io/posts/2012/08/blog-post-1/">&lt;p&gt;This is a sample blog post. Lorem ipsum I can’t remember the rest of lorem ipsum and don’t have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CUDA Cores/Mp: 64&lt;/strong&gt; (TX2 has 128)&lt;/p&gt;
 
-&lt;h1 id=&quot;headings-are-cool&quot;&gt;Headings are cool&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Total CUDA Cores: 512&lt;/strong&gt; (TX2 has 256)&lt;/p&gt;
 
-&lt;h1 id=&quot;you-can-have-many-headings&quot;&gt;You can have many headings&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Global Memory: ~16GB&lt;/strong&gt; (TX2 has ~8GB)&lt;/p&gt;
 
-&lt;h2 id=&quot;arent-headings-cool&quot;&gt;Aren’t headings cool?&lt;/h2&gt;</content><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><category term="cool posts" /><category term="category1" /><category term="category2" /><summary type="html">This is a sample blog post. Lorem ipsum I can’t remember the rest of lorem ipsum and don’t have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.</summary></entry></feed>
+&lt;p&gt;&lt;strong&gt;GPU Max Frequency: 1500GHz&lt;/strong&gt; (TX2 has 1300GHz)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Memory Clock Rate: 1500MHz&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Memory Bus Width: 256-bit&lt;/strong&gt; (TX2 has 128-bit)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Figure 8: Device Query&lt;/strong&gt;
+&lt;img src=&quot;/images/device_query.png&quot; alt=&quot;device-query&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The CUDA Cores to Multiprocessor ratio is interesting. I will post a more
+detailed follow up with actual benchmarks on my code soon. I suspect the Xavier
+will be able to better handle multiple CUDA streams and kernel launches because
+of this, and that is exciting.&lt;/p&gt;
+
+&lt;p&gt;In the CPU realm, the Xavier brings 8 ARMv8 Processor cores, which seem to perform significantly
+better than the TX2, where the Denver cores didn’t really make significant
+contributions to performance. The CPU max frequency is 2265Hz and I did a little
+stress test to see how hot things could get.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo ./jetson_clocks
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is somewhat of a baseline for CPU and GPU temperatures. The device was
+idling when these were recorded. These are not freshly booted temperatures.
+Those are in the late 30 degres celsius range.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Figure 8: Before CPU stress test:&lt;/strong&gt;
+&lt;img src=&quot;/images/baseline_perf_thermal.png&quot; alt=&quot;thermal-baseline&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s stress it out:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;stress --cpu 8 --io 6 --vm 6 --vm-bytes 2048M --timeout 600s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Figure 9: Stress temperatures:&lt;/strong&gt;
+&lt;img src=&quot;/images/stress_temp.png&quot; alt=&quot;thermal-cpu&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;CPU-bound processes seem to be handled fairly well. I ran the stress test for 10
+minutes each a few times and temperatures stayed in the 50s.&lt;/p&gt;
+
+&lt;p&gt;To add some fuel to the fire, I threw in a pretty intensive GPU-bound process to
+the mix (and dialed back the CPU stress io and vm parameters to 2).&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./nbody_opengles -benchmark -fp64 -fullscreen -numbodies=1000000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Figure 10: GPU Stress temperatures:&lt;/strong&gt;
+&lt;img src=&quot;/images/cpugpumax.png&quot; alt=&quot;hot-hot-hot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Things got hot. Both CPU and GPU internal temperatures began to cross the 70
+degree mark. Temperatures remained in the 70s and didn’t appear to increase much
+even at 100% CPU and 100% GPU usage.&lt;/p&gt;
+
+&lt;p&gt;While the devkit seems to be well cooled, I suspect the Xavier will not take
+well to having it’s heatsink, fan and casing thrown away (as we bravely do with
+the Falcon 250, but that is an experiment I still intend on performing).&lt;/p&gt;
+
+&lt;h1 id=&quot;final-thoughts&quot;&gt;Final Thoughts&lt;/h1&gt;
+
+&lt;p&gt;30-10-02: I think this is a great step forward when compared to the TX2 devkits.
+Performance out of the box is impressive. A proper benchmark on existing TX2
+code is next on the to-do list along with a more comprehensive thermal analysis
+experiment without the fan and heat sink.&lt;/p&gt;</content><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><category term="embedded" /><category term="gpu" /><category term="robotics" /><category term="computer vision" /><category term="nvidia" /><summary type="html">Ever since the Jetson Xavier was announced, I’ve been itching to get my hands on one of them to put it through it’s paces. Thanks to James over at Ghost Robotics I finally get to play with one of these. I’ve spent a fair amount of time with the Jetson TX1 and Jetson TX2 and I will be making direct comparisons to the Xavier’s predecessor, the TX2.</summary></entry></feed>
