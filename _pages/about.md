@@ -17,4 +17,4 @@ I previously worked as an Application Developer at the Kumar Robotics Lab, befor
 # News
 
 ### [1. Jetson AGX Xavier Developer Kit - Initial Thoughts](/posts/jetsonxavier-initialthoughts)
-### [2. NVIDIA GPU Technology Conference - Jetson Developer DayTalk](/posts/gtcdc-talk)
+### [2. NVIDIA GPU Technology Conference - Jetson Developer Day Talk](/posts/gtcdc-talk)
