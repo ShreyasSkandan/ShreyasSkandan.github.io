@@ -19,7 +19,7 @@
 
 
 
-<title>Gesture Controlled Robot Arm - Shreyas Skandan</title>
+<title>Pytorch Scribbles - Shreyas Skandan</title>
 
 
 
@@ -29,15 +29,15 @@
 
 <meta property="og:locale" content="en-US">
 <meta property="og:site_name" content="Shreyas Skandan">
-<meta property="og:title" content="Gesture Controlled Robot Arm">
+<meta property="og:title" content="Pytorch Scribbles">
 
 
-  <link rel="canonical" href="http://localhost:4000/projects/portfolio-4/">
-  <meta property="og:url" content="http://localhost:4000/projects/portfolio-4/">
+  <link rel="canonical" href="http://localhost:4000/posts/pytorch_notes/">
+  <meta property="og:url" content="http://localhost:4000/posts/pytorch_notes/">
 
 
 
-  <meta property="og:description" content="An old project from my undergrad - Arduino and Leap Motion based wireless gesture controlled robotic arm">
+  <meta property="og:description" content="PyTorch Scribble Pad">
 
 
 
@@ -52,7 +52,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2018-10-06T19:50:02-07:00">
+  <meta property="article:published_time" content="2018-10-06T00:00:00-07:00">
 
 
 
@@ -249,21 +249,29 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Gesture Controlled Robot Arm">
-    <meta itemprop="description" content="An old project from my undergrad - Arduino and Leap Motion based wireless gesture controlled robotic arm">
+    <meta itemprop="headline" content="Pytorch Scribbles">
+    <meta itemprop="description" content="PyTorch Scribble Pad">
     <meta itemprop="datePublished" content="October 06, 2018">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Gesture Controlled Robot Arm
+          <h1 class="page__title" itemprop="headline">Pytorch Scribbles
 </h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  less than 1 minute read
+	
+</p>
           
         
         
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2018-10-06T19:50:02-07:00">October 06, 2018</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2018-10-06T00:00:00-07:00">October 06, 2018</time></p>
         
         
              
@@ -273,11 +281,25 @@
       
 
       <section class="page__content" itemprop="text">
-        <h3>Gesture Controlled Robot Arm</h3>
-<p align="justify">
-Here's a video of our Gesture Controlled Robotic Arm project. We're using a Leap Motion device on the client side along with our custom designed web application that communicates wirelessly with a 5-DOF  Robotic Arm on the server side. The Robotic Arm was made using 5 BMS 860DMax servos, a laser cut plastic frame and an Arduino Yun microcontroller.<br><br>
-Link to code repository: <a href="https://github.com/ShreyasSkandan/robotic-arm" target="_blank"> GitHub </a><br><br>
-<iframe width="415" height="215" src="https://www.youtube.com/embed/kUqru2KU-xE" frameborder="0" allowfullscreen></iframe><br><br></p>
+        <h1 id="pytorch-scribble-pad">PyTorch Scribble Pad</h1>
+
+<p>This page is a collection of notes and tips for myself in getting familiar with
+the workings of PyTorch.</p>
+
+<p><strong>1. Transfering Weights</strong></p>
+
+<p>If you have a pretrained network A with some layers A:{x,y,z} and you have a new
+network architecture with some layers B:{w,x,y,z,a}, and you wish to transfer
+weights learned from network A for layers {x,y,z} to B, you can do it using the
+following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pretrained_model_weights = torch.load('../path/model.pth')
+new_model_weights = model.state_dict()
+pretrained_model_weights = {k: v for k, v in pretrained_model_weights.items() if k in new_model_weights}
+new_model_weights.update(pretrained_model_weights)
+model.load_state_dict(new_model_weights)
+</code></pre></div></div>
+
 
         
       </section>
@@ -285,6 +307,43 @@ Link to code repository: <a href="https://github.com/ShreyasSkandan/robotic-arm"
       <footer class="page__meta">
         
         
+
+
+  
+
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/tags/#computer-vision" class="page__taxonomy-item" rel="tag">computer vision</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#deep-learning" class="page__taxonomy-item" rel="tag">deep learning</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#gpu" class="page__taxonomy-item" rel="tag">gpu</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#pytorch" class="page__taxonomy-item" rel="tag">pytorch</a><span class="sep">, </span>
+    
+      
+      
+      <a href="http://localhost:4000/tags/#robotics" class="page__taxonomy-item" rel="tag">robotics</a>
+    
+    </span>
+  </p>
 
 
 
@@ -298,13 +357,13 @@ Link to code repository: <a href="https://github.com/ShreyasSkandan/robotic-arm"
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/projects/portfolio-4/" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/posts/pytorch_notes/" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/projects/portfolio-4/" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/posts/pytorch_notes/" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=http://localhost:4000/projects/portfolio-4/" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=http://localhost:4000/posts/pytorch_notes/" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/projects/portfolio-4/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/posts/pytorch_notes/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
       
@@ -312,12 +371,11 @@ Link to code repository: <a href="https://github.com/ShreyasSkandan/robotic-arm"
 
   <nav class="pagination">
     
-      <a href="http://localhost:4000/projects/portfolio-3/" class="pagination--pager" title="Dense Stereo Vision for Real Time Depth Estimation
+      <a href="http://localhost:4000/posts/jetsonxavier-initialthoughts/" class="pagination--pager" title="Jetson Xavier - Initial Thoughts
 ">Previous</a>
     
     
-      <a href="http://localhost:4000/projects/portfolio-5/" class="pagination--pager" title="DARPA - Fast Lightweight Autonomy
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 

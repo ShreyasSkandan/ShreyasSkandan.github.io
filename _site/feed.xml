@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-03T11:38:20-07:00</updated><id>http://localhost:4000/</id><title type="html">Shreyas Skandan</title><subtitle>PhD Student at the University of Pennsylvania</subtitle><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><entry><title type="html">Jetson Xavier - Initial Thoughts</title><link href="http://localhost:4000/posts/jetsonxavier-initialthoughts/" rel="alternate" type="text/html" title="Jetson Xavier - Initial Thoughts" /><published>2018-10-03T00:00:00-07:00</published><updated>2018-10-03T00:00:00-07:00</updated><id>http://localhost:4000/posts/jetsonxavier</id><content type="html" xml:base="http://localhost:4000/posts/jetsonxavier-initialthoughts/">&lt;p&gt;Ever since the Jetson Xavier was announced, I’ve been itching to get my hands on
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-06T19:50:02-07:00</updated><id>http://localhost:4000/</id><title type="html">Shreyas Skandan</title><subtitle>PhD Student at the University of Pennsylvania</subtitle><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><entry><title type="html">Pytorch Scribbles</title><link href="http://localhost:4000/posts/pytorch_notes/" rel="alternate" type="text/html" title="Pytorch Scribbles" /><published>2018-10-06T00:00:00-07:00</published><updated>2018-10-06T00:00:00-07:00</updated><id>http://localhost:4000/posts/pytorchtips</id><content type="html" xml:base="http://localhost:4000/posts/pytorch_notes/">&lt;h1 id=&quot;pytorch-scribble-pad&quot;&gt;PyTorch Scribble Pad&lt;/h1&gt;
+
+&lt;p&gt;This page is a collection of notes and tips for myself in getting familiar with
+the workings of PyTorch.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. Transfering Weights&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have a pretrained network A with some layers A:{x,y,z} and you have a new
+network architecture with some layers B:{w,x,y,z,a}, and you wish to transfer
+weights learned from network A for layers {x,y,z} to B, you can do it using the
+following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pretrained_model_weights = torch.load('../path/model.pth')
+new_model_weights = model.state_dict()
+pretrained_model_weights = {k: v for k, v in pretrained_model_weights.items() if k in new_model_weights}
+new_model_weights.update(pretrained_model_weights)
+model.load_state_dict(new_model_weights)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><category term="gpu" /><category term="robotics" /><category term="computer vision" /><category term="deep learning" /><category term="pytorch" /><summary type="html">PyTorch Scribble Pad</summary></entry><entry><title type="html">Jetson Xavier - Initial Thoughts</title><link href="http://localhost:4000/posts/jetsonxavier-initialthoughts/" rel="alternate" type="text/html" title="Jetson Xavier - Initial Thoughts" /><published>2018-10-03T00:00:00-07:00</published><updated>2018-10-03T00:00:00-07:00</updated><id>http://localhost:4000/posts/jetsonxavier</id><content type="html" xml:base="http://localhost:4000/posts/jetsonxavier-initialthoughts/">&lt;p&gt;Ever since the Jetson Xavier was announced, I’ve been itching to get my hands on
 one of them to put it through it’s paces. Thanks to James over at &lt;a href=&quot;https://www.ghostrobotics.io/&quot;&gt;Ghost
 Robotics&lt;/a&gt; I finally get to play with one of
 these. I’ve spent a fair amount of time with the Jetson TX1 and Jetson TX2 and I
