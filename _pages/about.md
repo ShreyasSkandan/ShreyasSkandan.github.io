@@ -14,7 +14,8 @@ My name is Shreyas Skandan and I'm currently a PhD Student in the CIS Programme 
 I previously worked as an Application Developer at the Kumar Robotics Lab, before which I graduated from the M.S.E in Robotics programme at Penn. I worked on my Master's Thesis under Prof. Camillo Jose Taylor, which was "A survey of High Performance Dense Stereo Algorithms for Real Time Depth Estimation" -- a video of the presentation can be found [here](https://www.youtube.com/watch?v=QvHdOKvwGQw&feature=youtu.be&t=1h11m34s).
 
 
-# News
+# Updates
 
-### [1. Jetson AGX Xavier Developer Kit - Initial Thoughts](/posts/jetsonxavier-initialthoughts)
-### [2. NVIDIA GPU Technology Conference - Jetson Developer Day Talk](/posts/gtcdc-talk)
+### [Nov 21 2018 - Real Time Dense Depth Estimation by Fusing Stereo with Sparse Depth Measurements](/posts/stereofusion) - [*pre-print*](https://arxiv.org/abs/1809.07677) | [*code*](https://github.com/ShreyasSkandanS/stereo_sparse_depth_fusion)
+### [Oct 24 2018 - NVIDIA GPU Technology Conference - Jetson Developer Day Talk](/posts/gtcdc-talk) - [*video*](https://www.youtube.com/watch?v=FLunb5Y-USI)
+### [Oct 03 2018 - Jetson AGX Xavier Developer Kit - Initial Thoughts](/posts/jetsonxavier-initialthoughts)
