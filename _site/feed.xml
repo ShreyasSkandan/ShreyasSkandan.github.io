@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://shreyasskandan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shreyasskandan.github.io/" rel="alternate" type="text/html" /><updated>2018-11-21T07:40:43-08:00</updated><id>https://shreyasskandan.github.io/</id><title type="html">Shreyas Skandan</title><subtitle>PhD Student at the University of Pennsylvania</subtitle><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><entry><title type="html">Stereo and Sparse Depth Fusion</title><link href="https://shreyasskandan.github.io/posts/stereofusion/" rel="alternate" type="text/html" title="Stereo and Sparse Depth Fusion" /><published>2018-11-21T00:00:00-08:00</published><updated>2018-11-21T00:00:00-08:00</updated><id>https://shreyasskandan.github.io/posts/stereofusion</id><content type="html" xml:base="https://shreyasskandan.github.io/posts/stereofusion/">&lt;p&gt;Code for our paper &lt;em&gt;“Real Time Dense Depth Estimation by Fusing Stereo with
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://shreyasskandan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shreyasskandan.github.io/" rel="alternate" type="text/html" /><updated>2019-04-23T19:23:56-07:00</updated><id>https://shreyasskandan.github.io/</id><title type="html">Shreyas Skandan</title><subtitle>PhD Student at the University of Pennsylvania</subtitle><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><entry><title type="html">DFuseNet: Deep Fusion of RGB and Sparse Depth Information</title><link href="https://shreyasskandan.github.io/posts/dfusenet/" rel="alternate" type="text/html" title="DFuseNet: Deep Fusion of RGB and Sparse Depth Information" /><published>2019-04-18T00:00:00-07:00</published><updated>2019-04-18T00:00:00-07:00</updated><id>https://shreyasskandan.github.io/posts/dfusenet</id><content type="html" xml:base="https://shreyasskandan.github.io/posts/dfusenet/">&lt;p&gt;Code for our paper &lt;em&gt;“DFuseNet: Deep Fusion of RGB and Sparse Depth Information for Image Guided Dense Depth Completion”&lt;/em&gt; is now on GitHub -
+&lt;a href=&quot;https://github.com/ShreyasSkandanS/DFuseNet&quot;&gt;CODE&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The ARXIV paper can be found &lt;a href=&quot;https://arxiv.org/pdf/1902.00761.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/dfusenet_kitti.png&quot; alt=&quot;DFuseNetKitti&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We also present a small dataset of calibrated RGB and LiDAR data from a short drive around Philadelphia as an additional test set. This dataset can be found &lt;a href=&quot;https://github.com/ShreyasSkandanS/DFuseNet&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;abstract&quot;&gt;Abstract:&lt;/h3&gt;
+&lt;p&gt;In this paper we propose a convolutional neural network that is designed to upsample a series of sparse range measurements based on the contextual cues gleaned from a high resolution intensity image. Our approach draws inspiration from related work on super-resolution and in-painting. We propose a novel architecture that seeks to pull contextual cues separately from the intensity image and the depth features and then fuse them later in the network. We argue that this approach effectively exploits the relationship between the two modalities and produces accurate results while respecting salient image structures. We present experimental results to demonstrate that our approach is comparable with state of the art methods and generalizes well across multiple datasets.&lt;/p&gt;</content><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><category term="embedded" /><category term="gpu" /><category term="robotics" /><category term="computer vision" /><category term="nvidia" /><summary type="html">Code for our paper “DFuseNet: Deep Fusion of RGB and Sparse Depth Information for Image Guided Dense Depth Completion” is now on GitHub - CODE</summary></entry><entry><title type="html">DARPA Subterranean Challenge Integrated Exercise</title><link href="https://shreyasskandan.github.io/posts/darpastix/" rel="alternate" type="text/html" title="DARPA Subterranean Challenge Integrated Exercise" /><published>2019-04-07T00:00:00-07:00</published><updated>2019-04-07T00:00:00-07:00</updated><id>https://shreyasskandan.github.io/posts/darpastix</id><content type="html" xml:base="https://shreyasskandan.github.io/posts/darpastix/">&lt;p&gt;Our team (PLUTO) just got back from a successful run at the DARPA STIX in Colorado.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/stixteam.jpg&quot; alt=&quot;TEAM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We took platforms from both Ghost Robotics and Exyn Technologies:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ghost Robotics Vision Platform:&lt;/strong&gt;
+&lt;img src=&quot;/images/ghost_1.png&quot; alt=&quot;GhostRobotics1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ghost Robotics Vision Platform:&lt;/strong&gt;
+&lt;img src=&quot;/images/ghost_2.png&quot; alt=&quot;GhostRobotics2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ghost Robotics Vision Platform and Exyn Aerial Platform:&lt;/strong&gt;
+&lt;img src=&quot;/images/stix_platforms.png&quot; alt=&quot;RobotTeam&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To keep track of our team and our progress through this challenge, watch our &lt;a href=&quot;https://pluto-subt.github.io/index.html&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;</content><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><category term="embedded" /><category term="subterraneanchallenge" /><category term="robotics" /><category term="computer vision" /><category term="darpa" /><summary type="html">Our team (PLUTO) just got back from a successful run at the DARPA STIX in Colorado.</summary></entry><entry><title type="html">ICRA 2019 Accepted Papers</title><link href="https://shreyasskandan.github.io/posts/icra2019papers/" rel="alternate" type="text/html" title="ICRA 2019 Accepted Papers" /><published>2019-02-21T00:00:00-08:00</published><updated>2019-02-21T00:00:00-08:00</updated><id>https://shreyasskandan.github.io/posts/icra_accepted</id><content type="html" xml:base="https://shreyasskandan.github.io/posts/icra2019papers/">&lt;p&gt;Two papers that I was a part of:&lt;/p&gt;
+
+&lt;h2 id=&quot;1-the-open-vision-computer-an-integrated-sensing-and-compute-system-for-mobile-robots&quot;&gt;1. The Open Vision Computer: An Integrated Sensing and Compute System for Mobile Robots&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1809.07674&quot;&gt;Paper (arXiv)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;abstract&quot;&gt;Abstract&lt;/h4&gt;
+
+&lt;p&gt;In this paper we describe the Open Vision Computer (OVC) which was designed to support high speed, vision guided autonomous drone flight. In particular our aim was to develop a system that would be suitable for relatively small-scale flying platforms where size, weight, power consumption and computational performance were all important considerations. This manuscript describes the primary features of our OVC system and explains how they are used to support fully autonomous indoor and outdoor exploration and navigation operations on our Falcon 250 quadrotor platform.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtube.com/watch?v=dMxgNf8cXkI&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/dMxgNf8cXkI/0.jpg&quot; alt=&quot;OVC&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-real-time-dense-depth-estimation-by-fusing-stereo-with-sparse-depth-measurements&quot;&gt;2. Real Time Dense Depth Estimation by Fusing Stereo with Sparse Depth Measurements&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1809.07677&quot;&gt;Paper (arXiv)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;abstract-1&quot;&gt;Abstract&lt;/h4&gt;
+&lt;p&gt;We present an approach to depth estimation that fuses information from a stereo pair with sparse range measurements derived from a LIDAR sensor or a range camera. The goal of this work is to exploit the complementary strengths of the two sensor modalities, the accurate but sparse range measurements and the ambiguous but dense stereo information. These two sources are effectively and efficiently fused by combining ideas from anisotropic diffusion and semi-global matching.&lt;/p&gt;
+
+&lt;p&gt;We evaluate our approach on the KITTI 2015 and Middlebury 2014 datasets, using randomly sampled ground truth range measurements as our sparse depth input. We achieve significant performance improvements with a small fraction of range measurements on both datasets. We also provide qualitative results from our platform using the PMDTec Monstar sensor. Our entire pipeline runs on an NVIDIA TX-2 platform at 5Hz on 1280x1024 stereo images with 128 disparity levels.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtube.com/watch?v=p_jCRGMqE7Y&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/p_jCRGMqE7Y/0.jpg&quot; alt=&quot;StereoDepth&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Have been accepted to the “IEEE International Conference on Robotics and Automation 2019” (ICRA 2019). I will be attending to present this work, so feel free to reach out to me if you’re there.&lt;/p&gt;</content><author><name>Shreyas S. Shivakumar</name><email>sshreyas@seas.upenn.edu</email></author><category term="embedded" /><category term="gpu" /><category term="robotics" /><category term="computer vision" /><category term="nvidia" /><summary type="html">Two papers that I was a part of:</summary></entry><entry><title type="html">Stereo and Sparse Depth Fusion</title><link href="https://shreyasskandan.github.io/posts/stereofusion/" rel="alternate" type="text/html" title="Stereo and Sparse Depth Fusion" /><published>2018-11-21T00:00:00-08:00</published><updated>2018-11-21T00:00:00-08:00</updated><id>https://shreyasskandan.github.io/posts/stereofusion</id><content type="html" xml:base="https://shreyasskandan.github.io/posts/stereofusion/">&lt;p&gt;Code for our paper &lt;em&gt;“Real Time Dense Depth Estimation by Fusing Stereo with
 Sparse Depth Measurements”&lt;/em&gt; is now on GitHub -
 &lt;a href=&quot;https://github.com/ShreyasSkandanS/stereo_sparse_depth_fusion&quot;&gt;CODE&lt;/a&gt;&lt;/p&gt;
 

@@ -19,7 +19,7 @@
 
 
 
-<title>About Me - Shreyas Skandan</title>
+<title>Monocular Camera Based Fruit Counting and Mapping with Semantic Data Association - Shreyas Skandan</title>
 
 
 
@@ -29,27 +29,30 @@
 
 <meta property="og:locale" content="en-US">
 <meta property="og:site_name" content="Shreyas Skandan">
-<meta property="og:title" content="About Me">
+<meta property="og:title" content="Monocular Camera Based Fruit Counting and Mapping with Semantic Data Association">
 
 
-  <link rel="canonical" href="https://shreyasskandan.github.io/">
-  <meta property="og:url" content="https://shreyasskandan.github.io/">
-
-
-
-  <meta property="og:description" content="About me">
+  <link rel="canonical" href="https://shreyasskandan.github.io/publication/ral_mono_fruit_2019.md">
+  <meta property="og:url" content="https://shreyasskandan.github.io/publication/ral_mono_fruit_2019.md">
 
 
 
+  <meta property="og:description" content="We present a cheap, lightweight, and fast fruit counting pipeline. Our pipeline relies only on a monocular camera..">
 
+
+
+
+
+  
 
   
 
-  
 
 
 
 
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2019-02-28T00:00:00-08:00">
 
 
 
@@ -246,45 +249,38 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="About Me">
-    <meta itemprop="description" content="About me">
-    
+    <meta itemprop="headline" content="Monocular Camera Based Fruit Counting and Mapping with Semantic Data Association">
+    <meta itemprop="description" content="We present a cheap, lightweight, and fast fruit counting pipeline. Our pipeline relies only on a monocular camera..">
+    <meta itemprop="datePublished" content="February 28, 2019">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">About Me
+          <h1 class="page__title" itemprop="headline">Monocular Camera Based Fruit Counting and Mapping with Semantic Data Association
 </h1>
           
         
         
         
+          <p>Published in <i> IEEE Robotics and Automation Letters (27 February 2019) </i>, 2019 </p>
+        
         
              
+        
+          <p>Recommended citation: Liu, Xu. (2019). &quot;Monocular Camera Based Fruit Counting and Mapping with Semantic Data Association&quot; <i>Journal 1</i>. 1(3). <a href="https://ieeexplore.ieee.org/document/8653965/"><u>https://ieeexplore.ieee.org/document/8653965/</u></a></p>
         
     
         </header>
       
 
       <section class="page__content" itemprop="text">
-        <p>My name is Shreyas Skandan and I’m currently a PhD Student in the CIS Programme at the University of Pennsylvania. I’m part of the G.R.A.S.P Laboratory, at the <a href="https://www.kumarrobotics.org">Kumar Robotics Lab</a> under <a href="http://www.cis.upenn.edu/~cjtaylor/">Dr. Camillo J. Taylor</a> and I previously worked at the <a href="http://www.med.upenn.edu/rehabilitation-robotics-lab/">Rehabilitation Robotics Lab</a> under Dr. Michelle Johnson. My research focus is Computer Vision and Deep Learning applied to mobile robots, with a special interest in stereo depth estimation.</p>
+        <p>We present a cheap, lightweight, and fast fruit counting pipeline. Our pipeline relies only on a monocular camera, and achieves counting performance comparable to a state-of-the-art fruit counting system that utilizes an expensive sensor suite including a monocular camera, LiDAR and GPS/INS on a mango dataset. Our pipeline begins with a fruit and tree trunk detection component that uses state-of-the-art convolutional neural networks (CNNs). It then tracks fruits and tree trunks across images, with a Kalman Filter fusing measurements from the CNN detectors and an optical flow estimator. Finally, fruit count and map are estimated by an efficient fruit-as-feature semantic structure from motion (SfM) algorithm which converts 2D tracks of fruits and trunks into 3D landmarks, and uses these landmarks to identify double counting scenarios. There are many benefits of developing such a low cost and lightweight fruit counting system, including applicability to agriculture in developing countries, where monetary constraints or unstructured environments necessitate cheaper hardware solutions.</p>
 
-<p>I previously worked as an Application Developer at the Kumar Robotics Lab, after I graduated from the M.S.E in Robotics programme at Penn.</p>
+<p><a href="https://ieeexplore.ieee.org/document/8653965/">Download paper here</a></p>
 
-<p>I worked on my Master’s Thesis under Prof. Camillo Jose Taylor, which was “A survey of High Performance Dense Stereo Algorithms for Real Time Depth Estimation” – a video of the presentation can be found <a href="https://www.youtube.com/watch?v=QvHdOKvwGQw&amp;feature=youtu.be&amp;t=1h11m34s">here</a>.</p>
-
-<h1 id="updates">Updates</h1>
-
-<h3 id="apr-18-2019---dfusenet-deep-fusion-of-rgb-and-sparse-depth-information---pre-print--code"><a href="/posts/dfusenet">Apr 18 2019 - DFuseNet: Deep Fusion of RGB and Sparse Depth Information</a> - <a href="https://arxiv.org/pdf/1902.00761.pdf"><em>pre-print</em></a> | <a href="https://github.com/ShreyasSkandanS/DFuseNet"><em>code</em></a></h3>
-
-<h3 id="apr-07-2019---darpa-subterranean-integration-exercise-stix"><a href="/posts/darpastix">Apr 07 2019 - DARPA Subterranean Integration Exercise (STIX)</a></h3>
-
-<h3 id="feb-21-2019---icra-2019-accepted-papers"><a href="/posts/icra2019papers">Feb 21 2019 - ICRA 2019 Accepted Papers</a></h3>
-
-<h3 id="nov-21-2018---real-time-dense-depth-estimation-by-fusing-stereo-with-sparse-depth-measurements---pre-print--code"><a href="/posts/stereofusion">Nov 21 2018 - Real Time Dense Depth Estimation by Fusing Stereo with Sparse Depth Measurements</a> - <a href="https://arxiv.org/abs/1809.07677"><em>pre-print</em></a> | <a href="https://github.com/ShreyasSkandanS/stereo_sparse_depth_fusion"><em>code</em></a></h3>
-<h3 id="oct-24-2018---nvidia-gpu-technology-conference---jetson-developer-day-talk---video"><a href="/posts/gtcdc-talk">Oct 24 2018 - NVIDIA GPU Technology Conference - Jetson Developer Day Talk</a> - <a href="https://www.youtube.com/watch?v=FLunb5Y-USI"><em>video</em></a></h3>
-<h3 id="oct-03-2018---jetson-agx-xavier-developer-kit---initial-thoughts"><a href="/posts/jetsonxavier-initialthoughts">Oct 03 2018 - Jetson AGX Xavier Developer Kit - Initial Thoughts</a></h3>
+<p>Recommended citation: X. Liu et al., “Monocular Camera Based Fruit Counting and Mapping with Semantic Data Association,” in IEEE Robotics and Automation Letters.
+doi: 10.1109/LRA.2019.2901987</p>
 
         
       </section>
@@ -300,8 +296,32 @@
 
       
 
+<section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=https://shreyasskandan.github.io/publication/ral_mono_fruit_2019.md" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://shreyasskandan.github.io/publication/ral_mono_fruit_2019.md" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https://shreyasskandan.github.io/publication/ral_mono_fruit_2019.md" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://shreyasskandan.github.io/publication/ral_mono_fruit_2019.md" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
       
 
+
+  <nav class="pagination">
+    
+      <a href="https://shreyasskandan.github.io/publication/icra_deephomo_2018" class="pagination--pager" title="Unsupervised Deep Homography: A Fast and Robust Homography Estimation Model
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
 
     </div>
 
